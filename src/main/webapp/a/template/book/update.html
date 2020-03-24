@@ -1,0 +1,86 @@
+<div class="container">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica Libro</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitBookForm()" name="myForm" class="form-horizontal">
+				
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="title">Titolo</label>
+                        <div class="col-md-7">
+                            <input type="text" name="title" ng-model="book.title" class="form-control input-sm" placeholder="Inserisci il titolo del libro"
+                                 maxlength="50"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="description">Descrizione</label>
+                        <div class="col-md-7">
+                            <input type="text" name="description" ng-model="book.description" class="form-control input-sm" placeholder="Inserisci la descrizione del libro"
+                                 maxlength="50"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="author">Autore</label>
+                        <div class="col-md-7">
+                            <input type="text" name="author" ng-model="book.author" class="form-control input-sm" placeholder="Inserisci l'autore del libro" 
+                            maxlength="100"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="releaseDate">Data di pubblicazione</label>
+                        <div class="col-md-7">
+                            <input type="date" name="releaseDate" ng-model="releaseDate" 
+                            ng-value="book.dateOfBirth" class="form-control input-sm" placeholder="Inserisci data di pubblicazione"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="isbn">Numero ISBN</label>
+                        <div class="col-md-7">
+                            <input type="text"  pattern="\d*" name="isbn" ng-model="book.isbn" class="form-control input-sm" maxlength="13" placeholder="Inserisci numero isbn del libro"
+                                 />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="language">Lingua</label>
+                        <div class="col-md-7">
+                            <input type="text" name="language" ng-model="book.language" class="form-control input-sm" placeholder="Inserisci la lingua nella quale è scritto il libro"
+                                 maxlength="100"/>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+                    <hr>
+         
+
+					<div align="center">
+
+						<input type="submit" value="Modifica"
+							class="btn btn-primary btn-sm">
+						<a href="#/list-all-books" type="button"
+							class="btn btn-danger btn-sm">Indietro e annulla</a> <input
+							type="hidden" name="id" id="id"
+							ng-model="book.id"
+							value="{{book.id}}"> 
+<!-- 							<input type="hidden" -->
+<!-- 							name="oldImg" id="oldImg" ng-model="candidateCustom.oldImg" -->
+<!-- 							value="{{candidateCustom.imgpath}}">  -->
+<!-- 							<input type="hidden" -->
+<!-- 							name="oldCV" id="oldCV" ng-model="candidateCustom.oldCV" -->
+<!-- 							value="{{candidateCustom.cvExternalPath}}"> -->
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

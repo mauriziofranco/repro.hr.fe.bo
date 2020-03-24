@@ -1,0 +1,196 @@
+
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica Consulente IT</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitUserForm()" name="myForm"
+					class="form-horizontal">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="firstname">Nome</label>
+						<div class="col-md-7">
+							<input type="text" name="firstname"
+								ng-model="itConsultantCustom.firstname"
+								class="form-control input-sm" placeholder="Inserisci nome" maxlength="50"/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="lastname">Cognome</label>
+						<div class="col-md-7">
+							<input  type="text" name="lastname"
+								ng-model="itConsultantCustom.lastname"
+								class="form-control input-sm" placeholder="Inserisci cognome" maxlength="50" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="email">E-Mail</label>
+						<div class="col-md-7">
+							<input  type="email" name="email"  ng-model="itConsultantCustom.email"
+								class="form-control input-sm" placeholder="Inserisci email" maxlength="100" />
+						
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="dateOfBirth">Data
+							di nascita</label>
+						<div class="col-md-7">
+							<input  type="date" name="dateOfBirth" 
+								placeholder="yyyy-MM-dd" 
+								ng-model="dateOfBirth"
+								class="form-control input-sm"
+								ng-value="itConsultantCustom.dateOfBirth" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="domicileCity">Domicilio</label>
+						<div class="col-md-7">
+							<input  type="text" name="domicileCity"
+								ng-model="itConsultantCustom.domicileCity"
+								class="form-control input-sm" placeholder="Inserisci citta' del domicilio" maxlength="100" />
+						</div>
+					</div>
+
+<!-- 					<div class="form-group col-md-12"> -->
+<!-- 						<label class="col-md-2 control-lable" for="domicileStreetName">Via</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input required type="text" name="email" -->
+<!-- 								ng-model="itConsultantCustom.domicileStreetName" -->
+<!-- 								class="form-control input-sm" -->
+<!-- 								placeholder="Inserisci via del domicilio" maxlength="100"/> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+
+<!-- 					<div class="form-group col-md-12"> -->
+<!-- 						<label class="col-md-2 control-lable" for="domicileHouseNumber">Numero Civico</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input required type="text" name="domicileHouseNumber" -->
+<!-- 								ng-model="itConsultantCustom.domicileHouseNumber" -->
+<!-- 								class="form-control input-sm" -->
+<!-- 								placeholder="Inserisci numero civico" maxlength="100"/> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="studyQualification">Titolo
+							di studio</label>
+						<div class="col-md-7">
+							<input type="text" name="studyQualification"
+								ng-model="itConsultantCustom.studyQualification"
+								class="form-control input-sm"
+								placeholder="Inserisci titolo di studio" maxlength="300" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="mobile">Cellulare</label>
+						<div class="col-md-7">
+							<input  type="tel" name="mobile"
+								ng-model="itConsultantCustom.mobile" class="form-control input-sm"
+								placeholder="Inserisci cellulare" maxlength="20"/>
+								<label class="note2">Format: 1234567890</label>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="graduate">Laurea</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="itConsultantCustom.graduate"
+								name="graduate" class="form-control input-sm"
+								ng-checked="{{itConsultantCustom.graduate}}" />
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="high_graduate">Laurea
+							magistrale</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="itConsultantCustom.highGraduate"
+								name="highGraduate" class="form-control input-sm"
+								ng-checked="{{itConsultantCustom.highGraduate}}" />
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="still_high_study">Laurea/Laurea
+							Magistrale in corso</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="itConsultantCustom.stillHighStudy"
+								name="still_high_study" class="form-control input-sm"
+								ng-checked="{{itConsultantCustom.stillHighStudy}}" />
+						</div>
+					</div>
+
+					<hr>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="immagine">Immagine <img src="../../a/img/info.png" width="25" height="25"
+                                border="6" title="Formati: .jpg, .jpeg, .png Dimesione massima: 5MB" data-toggle="tooltip"></label>
+						<div class="col-md-7">
+							<input type="file" file-model="itConsultantCustom.files[0]"
+								class="form-control input-sm" accept=".jpg, .jpeg, .png"
+								onchange="loadFile(event)" /> <img
+								src="{{itConsultantCustom.imgpath}}" id="output" width="60"
+								height="60" border="0" />
+
+						</div>
+					</div>
+					<script>
+						var loadFile = function(event) {
+							var output = document.getElementById('output');
+							output.src = URL
+									.createObjectURL(event.target.files[0]);
+							console.log("output.src : " + output.src);
+						};
+					</script>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="cvExternalPath">Curriculum
+							Vitae<img src="../../a/img/info.png" width="25" height="25"
+                                border="6" title="Formati: .docx, .pdf, .doc Dimesione massima: 5MB" data-toggle="tooltip"></label>
+						<div class="col-md-7">
+							<input type="file" file-model="itConsultantCustom.files[1]"
+								class="form-control input-sm" accept=".docx, .pdf, .doc" /> <label
+								class="col-md-2 control-lable" for="oldCVpath">CV file
+								presente</label> <input type="text" class="form-control input-sm"
+								value="{{itConsultantCustom.cvExternalPath}}" id="output2" readonly />
+						</div>
+					</div>
+					
+					<div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="note">Note</label>
+                        <div class="col-md-7">
+                            <textarea id="myText" name="note" ng-model="itConsultantCustom.note" rows="10" maxlength="2000"
+								class="form-control input-sm"  ></textarea>
+                        </div>
+                         <p>&emsp;&emsp; 
+                        <span id= "wordCount">Caratteri rimanenti:  {{notelengthmax}}</span>
+                        </p>
+                    </div>
+                    
+					<div align="center">
+
+						<input type="submit" value="Modifica"
+							class="btn btn-primary btn-sm">
+						<!-- 					<button type="button" ng-click="resetForm()" -->
+						<!-- 						class="btn btn-warning btn-sm">Reset Form</button> -->
+						<a href="#/list-all-itconsultants" type="button"
+							class="btn btn-danger btn-sm">Indietro e annulla</a> <input
+							type="hidden" name="id" id="userId"
+							ng-model="itConsultantCustom.userId"
+							value="{{itConsultantCustom.userId}}"> <input type="hidden"
+							name="oldImg" id="oldImg" ng-model="itConsultantCustom.oldImg"
+							value="{{itConsultantCustom.imgpath}}"> <input type="hidden"
+							name="oldCV" id="oldCV" ng-model="itConsultantCustom.oldCV"
+							value="{{itConsultantCustom.cvExternalPath}}">
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

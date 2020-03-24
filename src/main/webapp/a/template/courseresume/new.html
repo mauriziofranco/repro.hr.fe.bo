@@ -1,0 +1,58 @@
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Inserisci corso smart</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form class="form-horizontal">
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="courseResumeTitle"
+							readonly>Codice</label>
+						<div class="col-md-7">
+							<select type="text" name="courseResumeTitle"
+								ng-model="myForm.code" style="width: 350px">
+								<option value={{current.code}}
+									ng-repeat="current in codeTemplate">{{current.code}}</option>
+							</select>
+							<button type="button" ng-click="insertTitleForm()"
+								class="btn btn-primary btn-sm">Inserisci titolo del
+								corso</button>
+						</div>
+						<div class="form-group col-md-12">
+							<label class="col-md-2 control-lable" for="title">Titolo</label>
+							<div class="col-md-7">
+								<input type="text" name="title" ng-model="myForm.title"
+									class="form-control input-sm"
+									placeholder="Inserisci il titolo del corso" required>
+							</div>
+						</div>
+
+						<div class="form-group col-md-12">
+							<label class="col-md-2 control-lable" for="content">Contenuto</label>
+							<div class="col-md-7">
+								<textarea id =myText name="content" ng-model="myForm.content" rows="17"
+									class="form-control input-sm"
+									placeholder="Inserisci il contenuto del corso" 
+									pattern=".{2,2000}" required></textarea>
+							</div>
+							<p>&emsp;&emsp;
+							<span id="wordCount">Caratteri rimanenti: {{contentlengthmax}}</span>
+							</p>
+						</div>
+
+						<div align="center">
+
+							<button type="submit" ng-click="submitUserForm()"
+								class="btn btn-primary btn-sm">Inserisci</button>
+							<button type="button" ng-click="resetForm()"
+								class="btn btn-warning btn-sm">Cancella</button>
+							<a href="#/list-all-courseresumes" type="button"
+								class="btn btn-danger btn-sm">Indietro</a>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

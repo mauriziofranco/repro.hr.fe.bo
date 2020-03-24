@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="panel">
+
+		<div class="panel-heading">
+			<h1 class="panel-title">
+				Lista libri
+				<!-- div aggiorna pagina -->
+				<div class="control-table" align="right">
+					<a href="#/register-new-book" class="btn-control btn-control-new" role="button"></a> 
+					<a href=""	class="btn-control btn-control-reload" ng-click="listCand()"role="button"></a>
+					<div class="progress progress-reload" ng-click="autoReload()">
+						<div id="candidatebar" class="progress-bar progress-bar-reload"
+							role="progressbar" style="width: {{reloadCandidate"></div>
+					</div>
+				</div>
+			</h1>
+		</div>
+
+		<div class="panel-body">
+			<div id="data-table-default_wrapper"
+				class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="dataTables_length" id="data-table-default_length">
+							<label>Visualizza <select id="mySelect"
+								ng-options="option.value for option in data.availableOptions track by option.id"
+								ng-model="data.selectedOption" ng-change="getCandidates()"
+								name="data-table-default_length"
+								aria-controls="data-table-default" class="form-control input-sm">
+							</select> libri
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div id="data-table-default_filter" class="dataTables_filter">
+							<label>Cerca: <input type="search" ng-model="search"
+								class="form-control input-sm" placeholder=""
+								aria-controls="data-table-default"></label>
+						</div>
+					</div>
+				</div>
+
+				<div class="card-deck">
+				<div class="row" ng-repeat="current in list" ng-init="i = $index">
+					<div class="card" ng-repeat="current in list.slice(i*6,(i*6)+6) | filter:search">
+						<img class="card-img-top"
+							src="prova.jpg"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">{{current.title}}</h5>
+							<button type="button" class="btn btn-sm btn-info"
+								data-toggle="popover"  data-trigger="focus" data-html="true"
+								data-content='<p>Autore: {{current.author}}</p><p class="font-weight-light">{{current.description}}</p><a href="{{current.bookFileName}}" ng-if="current.cvExternalPath != null" target="_blank" download>
+						 				<i class="fa fa-download" ></i>
+						 				</a>'
+								data-content='{{current.description}}'>Download</button>
+						</div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>

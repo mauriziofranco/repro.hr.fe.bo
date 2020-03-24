@@ -1,0 +1,51 @@
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica sito di provenienza</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitUserForm()" name="myForm"
+					class="form-horizontal">
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="description">Descrizione</label>
+						<div class="col-md-7">
+							<input type="text" name="description"
+								ng-model="originSite.description" class="form-control input-sm"
+								placeholder="Inserisci descrizione" pattern="[A-Za-z].{5,2000}" required>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="imgPath">Path
+							immagine</label>
+						<div class="col-md-7">
+							<input type="text" name="imgPath" ng-model="originSite.imgPath"
+								class="form-control input-sm"
+								placeholder="Inserisci path immagine" pattern=".{0,255}">
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="label">Etichetta</label>
+						<div class="col-md-7">
+							<input type="text" name="label" ng-model="originSite.label"
+								class="form-control input-sm" placeholder="Inserisci etichetta"
+								pattern="[A-Za-z].{3,100}" required>
+						</div>
+					</div>
+
+					<div align="center">
+
+						<input type="submit" value="Modifica"
+							class="btn btn-primary btn-sm"
+							ng-click="editOriginSite(current.id)"> <a
+							href="#/list-all-originsites" type="button"
+							class="btn btn-danger btn-sm">Indietro</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

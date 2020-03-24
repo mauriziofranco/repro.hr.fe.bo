@@ -1,0 +1,73 @@
+
+<!-- begin breadcrumb -->
+<!-- <ol class="breadcrumb pull-right"> -->
+<!-- 	<li class="breadcrumb-item"><a href="#list-all-usersurveytoken" onclick="Pace.restart();">UserSurveyToken</a></li> -->
+<!-- 	<li class="breadcrumb-item"><a href="#/list-all-candidates" onclick="Pace.restart();">Candidate</a></li> -->
+<!-- 	<li class="breadcrumb-item active">Summary Home</li> -->
+<!-- </ol> -->
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<div class="row">
+<h1 class="page-header">
+		Statistiche 2
+	<small ng-if="$root.checked">header small text goes
+		here...</small>
+		
+</h1>
+</div>
+<!-- end page-header -->
+<!-- begin row -->
+
+
+
+<div style="display: none;" id="chart">
+<div  ng-repeat="survey in surveys">
+	<div class="col-lg-8 ui-sortable" id="panel{{survey.id}}">
+		<!-- begin panel questionari ultimi 7 giorni -->
+		<div class="panel panel-inverse" data-sortable-id="index-3" >
+			<div class="panel-heading ui-sortable-handle">
+				<div class="panel-heading-btn" >
+					<a href="javascript:;"
+						class="btn btn-xs btn-icon btn-circle btn-default"
+						data-click="panel-expand"><i class="fa fa-expand"></i></a> <a
+						href="javascript:;"
+						class="btn btn-xs btn-icon btn-circle btn-success"
+						data-click="panel-reload"><i class="fa fa-redo"></i></a> <a
+						href="javascript:;"
+						class="btn btn-xs btn-icon btn-circle btn-warning"
+						data-click="panel-collapse"><i class="fa fa-minus"></i></a> <a
+						href="javascript:;"
+						class="btn btn-xs btn-icon btn-circle btn-danger"
+						data-click="panel-remove"><i class="fa fa-times"></i></a>
+				</div>
+				<h4 class="panel-title">{{survey.label}}</h4>
+			</div>
+			<div class="panel-body">
+				<div id="{{survey.id}}"></div>
+			</div>
+			
+		</div>
+		<!-- end panel -->
+	</div>
+</div>
+</div>
+<div class="row" style="margin-top: 50px;">
+<div id="noContent" style="display: none;" class="alert alert-danger" role="alert">
+  Errore, nessun grafico da mostrare.
+</div>
+
+</div>
+
+
+
+
+
+<!-- <div  ng-repeat="candidate in candidates"> -->
+<!-- 	<h1>Ciao</h1> -->
+<!-- </div> -->
+
+
+
+	
+	
+

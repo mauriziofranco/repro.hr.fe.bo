@@ -1,0 +1,51 @@
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica corso smart</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitUserForm()" name="myForm"
+					class="form-horizontal">
+					
+					<div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="code">Code</label>
+                        <div class="col-md-7">
+                            <input type="text" name="code" ng-model="courseResume.code" class="form-control input-sm" 
+                                 readonly>
+                        </div>
+                    </div>
+					
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="title">Titolo</label>
+                        <div class="col-md-7">
+                            <input type="text" name="title" ng-model="courseResume.title" class="form-control input-sm" placeholder="Inserisci titolo"
+                                 pattern=".{3,100}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="content">Contenuto</label>
+                        <div class="col-md-7">
+                            <textarea id =myText name="content" ng-model="courseResume.content" rows="17"
+									class="form-control input-sm"
+									placeholder="Inserisci il contenuto del corso" 
+									pattern=".{2,2000}" required></textarea>
+                        </div>
+                        <p>&emsp;&emsp;
+							<span id="wordCount">Caratteri rimanenti: {{contentlengthmax}}</span>
+						</p>
+                    </div>
+
+					<div align="center">
+
+						<input type="submit" value="Modifica" ng-click="editCourseResume()"
+							class="btn btn-primary btn-sm">
+						<a href="#/list-all-courseresumes" type="button"
+							class="btn btn-danger btn-sm">Indietro e annulla</a> 
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

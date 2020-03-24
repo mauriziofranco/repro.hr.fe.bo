@@ -1,0 +1,50 @@
+<div class="container content">
+    <div class="panel">
+        <div class="panel-heading">
+            <h1 class="panel-title">Inserisci Corso</h1>
+        </div>
+        <div class="panel-body ">
+            <div class="container">
+                <form  class="form-horizontal">
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="title">Titolo</label>
+                        <div class="col-md-7">
+                            <input type="text" name="title" ng-model="myForm.title" class="form-control input-sm" placeholder="Inserisci il titolo del corso"
+                                 maxlength="50"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="code">Codice</label>
+                        <div class="col-md-7">
+                            <input type="text" name="code" ng-model="myForm.code" class="form-control input-sm" placeholder="Inserisci codice"
+                                 maxlength="50"/>
+                        </div>
+                    </div>
+
+ 
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="language">Html</label>
+                        <div class="col-md-7">
+                            <textarea id= "myText" name="bodyText" ng-model="myForm.bodyText"
+								class="form-control input-sm"  ></textarea>
+                        </div>
+                        
+                    </div>
+
+
+                    <div align="center">
+
+                        <!-- <input type="submit" value="Register User" class="btn btn-primary btn-sm"> -->
+                        <button type="submit" ng-click="submitUserForm()" class="btn btn-primary btn-sm">Inserisci</button>
+                        <button type="button" ng-click="resetForm()" class="btn btn-warning btn-sm">Cancella</button>
+                        <!-- <input type="hidden" name="id" id="idCandidate" value=""> -->
+                        <a href="#/list-all-courses" type="button" class="btn btn-danger btn-sm">Indietro</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

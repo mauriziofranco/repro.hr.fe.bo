@@ -1,0 +1,41 @@
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica note</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitUserForm()" name="myForm"
+					class="form-horizontal">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="title">Titolo</label>
+						<div class="col-md-7">
+							<input type="text" name="title"
+								ng-model="noteTemplateCustom.title"
+								class="form-control input-sm" placeholder="Inserisci titolo" maxlength="50"/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="content">Contenuto</label>
+						<div class="col-md-7">
+							<textarea cols="25" rows="20" name="content"
+								ng-model="noteTemplateCustom.content"
+								class="form-control input-sm" placeholder="Inserisci contenuto" maxlength="50" /></textarea>
+						</div>
+					</div>
+
+					
+						<input type="submit" value="Modifica"
+							class="btn btn-primary btn-sm"
+							ng-click="editNoteCustom(current.id)">
+<!-- 											<button type="button" ng-click="resetForm()" -->
+<!-- 												class="btn btn-warning btn-sm">Reset Form</button> -->
+						<a href="#/list-all-note" type="button" class="btn btn-danger btn-sm">Indietro e annulla</a> 
+						<input type="hidden" name="id" id="Id" ng-model="noteTemplateCustom.Id" value="{{noteTemplateCustom.Id}}">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

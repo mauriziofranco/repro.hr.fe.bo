@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="panel">
+        <div class="panel-heading">
+            <h1 class="panel-title">Inserisci nuovo Libro</h1>
+        </div>
+        <div class="panel-body ">
+            <div class="container">
+                <form class="form-horizontal">
+
+
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="title">Titolo</label>
+                        <div class="col-md-7">
+                            <input type="text" name="title" ng-model="myForm.title" class="form-control input-sm" placeholder="Inserisci il titolo del libro"
+                                 maxlength="50"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="description">Descrizione</label>
+                        <div class="col-md-7">
+                            <input type="text" name="description" ng-model="myForm.description" class="form-control input-sm" placeholder="Inserisci la descrizione del libro"
+                                 maxlength="100"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="author">Autore</label>
+                        <div class="col-md-7">
+                            <input type="text" name="author" ng-model="myForm.author" class="form-control input-sm" placeholder="Inserisci l'autore del libro" 
+                            maxlength="30"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="releaseDate">Data di pubblicazione</label>
+                        <div class="col-md-7">
+                            <input type="date" name="releaseDate" ng-model="myForm.releaseDate" class="form-control input-sm" placeholder="Inserisci data di pubblicazione"
+                                 />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="isbn">Numero ISBN</label>
+                        <div class="col-md-7">
+                            <input type="text" pattern="\d*" maxlength="13" name="isbn" ng-model="myForm.isbn" class="form-control input-sm"  placeholder="Inserisci numero isbn del libro"
+                                 />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="language">Lingua</label>
+                        <div class="col-md-7">
+                            <input type="text" name="language" ng-model="myForm.language" class="form-control input-sm" placeholder="Inserisci la lingua nella quale è scritto il libro"
+                                 maxlength="100"/>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+                    <hr>
+
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="cvExternalPath">File<img src="./img/info.png" width="25" height="25"
+                                border="6" title="Formati: .docx, .pdf, .doc Dimesione massima: 5MB" data-toggle="tooltip"> </label>
+                        <div class="col-md-7">
+                            <input type="file" file-model="myForm.files[0]" class="form-control input-sm" accept=".docx, .pdf, .doc" />
+                        </div>
+
+                    </div>
+
+                    <div align="center">
+
+                        <!-- <input type="submit" value="Register User" class="btn btn-primary btn-sm"> -->
+                        <button type="submit" ng-click="submitBookForm()" class="btn btn-primary btn-sm">Inserisci</button>
+                        <button type="button" ng-click="resetForm()" class="btn btn-warning btn-sm">Cancella</button>
+                        <!-- <input type="hidden" name="id" id="idCandidate" value=""> -->
+                        <a href="#/list-all-books" type="button" class="btn btn-danger btn-sm">Indietro</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

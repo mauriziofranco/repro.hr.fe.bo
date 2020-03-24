@@ -1,0 +1,221 @@
+<div class="container content">
+	<div class="panel">
+		<div class="panel-heading">
+			<h1 class="panel-title">Modifica candidato</h1>
+		</div>
+		<div class="panel-body ">
+			<div class="container">
+				<form ng-submit="submitUserForm()"
+					class="form-horizontal">
+					
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="firstname">Nome</label>
+						<div class="col-md-7">
+							<input type="text" name="firstname"
+								ng-model="candidateCustom.firstname"
+								class="form-control input-sm" placeholder="Inserisci nome" 
+								pattern="[A-Za-zÀ-ÿ ]{1,50}" required/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="lastname">Cognome</label>
+						<div class="col-md-7">
+							<input type="text" name="lastname"
+								ng-model="candidateCustom.lastname"
+								class="form-control input-sm" placeholder="Inserisci cognome" 
+								pattern="[A-Za-zÀ-ÿ ]{1,50}" required />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="email">E-Mail</label>
+						<div class="col-md-7">
+							<input type="text" name="email" ng-model="candidateCustom.email"
+								class="form-control input-sm" placeholder="Inserisci email" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="dateOfBirth">Data
+							di nascita</label>
+						<div class="col-md-7">
+							<input type="date" name="dateOfBirth" 
+								placeholder="yyyy-MM-dd" 
+								ng-model="dateOfBirth"
+								class="form-control input-sm"
+								ng-value="candidateCustom.dateOfBirth" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="domicileCity">Domicilio</label>
+						<div class="col-md-7">
+							<input type="text" name="domicileCity"
+								ng-model="candidateCustom.domicileCity"
+								class="form-control input-sm" placeholder="Inserisci citta' del domicilio" maxlength="100" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="domicileStreetName">Via</label>
+						<div class="col-md-7">
+							<input type="text" name="email"
+								ng-model="candidateCustom.domicileStreetName"
+								class="form-control input-sm"
+								placeholder="Inserisci via del domicilio" maxlength="100"/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="domicileHouseNumber">Numero Civico</label>
+						<div class="col-md-7">
+							<input type="number" name="domicileHouseNumber"
+								ng-model="candidateCustom.domicileHouseNumber"
+								class="form-control input-sm"
+								placeholder="Inserisci numero civico" maxlength="10"/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="studyQualification">Titolo
+							di studio</label>
+						<div class="col-md-7">
+							<input type="text" name="studyQualification"
+								ng-model="candidateCustom.studyQualification"
+								class="form-control input-sm"
+								placeholder="Inserisci titolo di studio" maxlength="300" />
+						</div>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="mobile">Cellulare</label>
+						<div class="col-md-7">
+							<input type="tel" name="mobile"
+								ng-model="candidateCustom.mobile" class="form-control input-sm"
+								placeholder="Inserisci cellulare" maxlength="20" />
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="graduate">Laurea</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="candidateCustom.graduate"
+								name="graduate" class="form-control input-sm"
+								ng-checked="{{candidateCustom.graduate}}" />
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="high_graduate">Laurea
+							magistrale</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="candidateCustom.highGraduate"
+								name="highGraduate" class="form-control input-sm"
+								ng-checked="{{candidateCustom.highGraduate}}" />
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="still_high_study">Laurea/Laurea
+							Magistrale in corso</label>
+						<div class="col-md-7">
+							<input type="checkbox" ng-model="candidateCustom.stillHighStudy"
+								name="still_high_study" class="form-control input-sm"
+								ng-checked="{{candidateCustom.stillHighStudy}}" />
+						</div>
+					</div>
+
+					<hr>
+					   <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="candidateNote" readonly>ETICHETTA</label>
+                        	<div class="col-md-7">
+                        		<select name="originSite" ng-model="myForm.site"  style="width:350px">
+									<option  value={{current.description}} ng-repeat="current in site">{{current.label}}</option>
+							</select> 
+                        	</div>
+                        </div>
+                    
+                    <hr>
+                    
+                        <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="candidateStatesId" readonly>Candidate State</label>
+                        	<div class="col-md-7">
+								<select ng-options="current as current.statusLabel for current in states track by current.id" ng-model="selected" style="background-color:{{selected.statusColor}}"></select>
+                        	</div>
+                        </div>
+                    <hr>
+					<div class="form-group col-md-12 form-inline">
+						<label class="col-md-2 control-lable" for="immagine">Immagine <img src="../a/img/info.png" width="25" height="25"
+                                border="6" title="Formati: .jpg, .jpeg, .png Dimesione massima: 5MB" data-toggle="tooltip"></label>
+						<div class="col-md-7 form-inline">
+							<input type="file" file-model="candidateCustom.files[0]"
+								class="form-control input-sm" accept=".jpg, .jpeg, .png"
+								onchange="loadFile(event)" /> <img
+								src="{{candidateCustom.imgpath}}" alt="" id="output" width="60"
+								height="60" border="0" style="padding: 10px; float: right;" />
+						</div>
+					</div>
+					<script>
+						var loadFile = function(event) {
+							var output = document.getElementById('output');
+							output.src = URL
+									.createObjectURL(event.target.files[0]);
+							console.log("output.src : " + output.src);
+						};
+					</script>
+
+					<div class="form-group col-md-12">
+						<div class="col-md-7">
+						<label class="col-md-2 control-lable" for="cvExternalPath">Curriculum
+							Vitae<img src="../a/img/info.png" width="25" height="25" 
+                                border="6" title="Formati: .docx, .pdf, .doc Dimesione massima: 5MB" data-toggle="tooltip"></label>
+						</div>
+						<div class="col-md-7">
+							<input type="file" file-model="candidateCustom.files[1]"
+								class="form-control input-sm" accept=".docx, .pdf, .doc" />
+								 <br>
+								 <label
+								class="col-md-2 control-lable" for="oldCVpath">CV file
+								presente</label> <input type="text" class="form-control input-sm"
+								value="{{candidateCustom.cvExternalPath}}" id="output2" readonly />
+						</div>
+					</div>
+					
+					<div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="note">Note</label>
+                        <div class="col-md-7">
+                            <textarea id="myText" name="note" ng-model="candidateCustom.note" rows="10" maxlength="2000"
+								class="form-control input-sm"  ></textarea>
+                        </div>
+                        <p>&emsp;&emsp; 
+                        <span id= "wordCount" >Caratteri rimanenti:  {{notelengthmax}}</span>
+                        </p>
+                    </div>
+
+					<div align="center">
+
+						<input type="submit" value="Modifica"
+							class="btn btn-primary btn-sm">
+						<!-- 					<button type="button" ng-click="resetForm()" -->
+						<!-- 						class="btn btn-warning btn-sm">Reset Form</button> -->
+						<a href="#/list-all-candidates" type="button"
+							class="btn btn-danger btn-sm">Indietro</a> 
+							<input type="hidden" name="id" id="userId"
+							ng-model="candidateCustom.userId"
+							value="{{candidateCustom.userId}}"> 
+							<input type="hidden"
+							name="oldImg" id="oldImg" ng-model="candidateCustom.oldImg"
+							value="{{candidateCustom.imgpath}}"> 
+							<input type="hidden"
+							name="oldCV" id="oldCV" ng-model="candidateCustom.oldCV"
+							value="{{candidateCustom.cvExternalPath}}">
+							<input type="hidden" ng-model="candidateCustom.oldCandState" id="oldCandState" name="oldCandState"
+							value="{{candidateCustom.candidateStatesId}}">
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

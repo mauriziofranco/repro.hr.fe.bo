@@ -1,0 +1,1 @@
+var APPLICATION_ROOT_CONTEXT = "/centauri" ;

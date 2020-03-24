@@ -1,0 +1,97 @@
+<!-- <script src="C:/Users/Varchetta/eclipse-workspace/cerepro.backend/src/main/resources/static/a/js/app_courses.js"></script> -->
+<!-- <script src="C:/Users/Varchetta/eclipse-workspace/cerepro.backend/src/main/resources/static/a/js/coursePageController.js"></script> -->
+<div class="container content">
+	<div class="panel" >
+	
+		<div class="panel-heading">
+			<h1 class="panel-title">
+				Lista Corsi
+				<!-- div aggiorna pagina -->
+				<div class="control-table" align="right">
+					<a href="#/register-new-course" class="btn-control btn-control-new" role="button"></a>
+
+				</div>
+			</h1>
+		</div>
+		
+		<div class="panel-body">
+			<div id="data-table-default_wrapper"
+				class="dataTables_wrapper  form-inline dt-bootstrap no-footer">
+
+					<div  class="table-responsive">
+						<table id="data-table-default"
+							class="table table-striped  table-bordered  no-footer dtr-inline"
+							aria-describedby="data-table-default_info"
+							style="width: 1040px;">
+					
+							<thead>
+								<tr>
+									<th  scope="col" >Title</th>
+									<th  scope="col">Codice</th>
+									<th width="100" scope="col"></th>
+									<th width="100" scope="col"></th>
+									<th width="175" scope="col">On/Off</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr ng-repeat="current in list | filter:search"
+									 scope="row">
+									
+									<td>{{current.title}}</td>
+									<td>{{current.code}}</td>
+									
+									
+									
+									<td>
+										<button type="button"
+											ng-click="editCoursePage(current.id)"
+											class="btn btn-primary custom-width">
+											<span class="glyphicon glyphicon-edit"> </span> Modifica
+										</button>
+									</td>
+									<td>
+										<button type="button"
+											ng-click="deleteCourse(current.id)"
+											class="btn btn-danger custom-width">
+											<span class="glyphicon glyphicon-remove"> </span> Cancella
+										</button>
+									</td>
+									<td>
+										
+										<button style="background-color:green;"  ng-if="current.fileName != null">
+								  		 <strong>On </strong>	
+								  		</button>
+								  		
+								  		<button style="background-color:gray;" ng-click="setOnline(current.id)" ng-if="current.fileName == null">
+								  		 <strong>On </strong>	
+								  		</button>
+								  	
+								  	 	<button  style="background-color:red;" ng-if="current.fileName == null" >
+								  			 <strong>Off</strong>
+								  		</button>		
+								  		
+								  		<button  style="background-color:gray;" ng-click="setOffline(current.id)" ng-if="current.fileName != null" >
+								  			 <strong>Off</strong>
+								  		</button>	
+								  		
+
+										
+										<button type="button" ng-if="current.fileName != null"  ng-click="openCoursePage(current.code)"
+											class="btn btn-primary custom-width">
+											<span class="glyphicon glyphicon-edit"> </span> APRI PAGINA
+										</button> 
+										
+									
+										
+									</td>
+								
+								</tr>
+							</tbody>
+
+						</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
