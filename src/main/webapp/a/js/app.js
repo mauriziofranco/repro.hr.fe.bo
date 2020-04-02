@@ -81,6 +81,16 @@ app.config(function($routeProvider) {
 	}).when('/update-noteTemplate/:id', {
 		templateUrl : './template/noteTemplate/update.html',
 		controller : 'noteEditController'
+	}).when('/list-all-message', {
+		//		newsLetterMessage
+		templateUrl : './template/newsLetterMessage/list.html',
+		controller : 'listMessageController'
+	}).when('/register-new-message', {
+		templateUrl : './template/newsLetterMessage/new.html',
+		controller : 'registerMessageController'
+	}).when('/update-message/:id', {
+		templateUrl : './template/newsLetterMessage/update.html',
+		controller : 'messageEditController'
 	}).when('/list-all-interviewreplies', {
 		templateUrl : './template/interview/interview.html',
 		controller : 'interviewController'
