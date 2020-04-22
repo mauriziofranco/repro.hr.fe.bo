@@ -5,10 +5,8 @@ pipeline {
         booleanParam(name: 'PROMOTE_ON_PRODUCTION', defaultValue: false,
             description: 'Al termine di questa pipeline, vuoi consentire la promozione in ambiente di Produzione?')
     }
-    environment {
-    
-        PACKAGE_FILE_NAME = readMavenPom().getProperties().getProperty('package.file.name')
-        MAVEN_FILE = readMavenPom()
+    environment {             
+        PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
         PACKAGING = readMavenPom().getPackaging()
         ARTIFACT_FULL_FILE_NAME = "${PACKAGE_FILE_NAME}.${PACKAGING}"
         
