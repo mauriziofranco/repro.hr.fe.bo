@@ -1,0 +1,9 @@
+REQUIREMENTS:
+
+1) Following symbolic link needs to be created(after folders creation, related to cerepro.hr.backend)
+
+    - ln -sf /cerepro/candidates/img /home/maurizio/apache-tomcat-9.0.14/webapps/canimg
+    - ln -sf /cerepro/candidates/cv  /home/maurizio/apache-tomcat-9.0.14/webapps/cancv
+    - ln -sf /cerepro/itconsultants/img /home/maurizio/apache-tomcat-9.0.14/webapps/itcimg
+    - ln -sf /cerepro/itconsultants/cv /home/maurizio/apache-tomcat-9.0.14/webapps/itccv
+    - ln -sf /cerepro/thumbnails /home/maurizio/apache-tomcat-9.0.14/webapps/thumbnails
