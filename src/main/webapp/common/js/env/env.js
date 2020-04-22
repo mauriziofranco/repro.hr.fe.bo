@@ -1,6 +1,8 @@
 //BACKEND | START
 var HOST_BACKEND_LOCATION="http://localhost:8080";
-var CONTEXT_PATH_SERVICES="/cerepro.be";
+//var CONTEXT_PATH_SERVICES="/cerepro.be";
+//var HOST_BACKEND_LOCATION="http://centauri.proximainformatica.com:71";
+var CONTEXT_PATH_SERVICES="/cerepro.hr.backend";
 var MAIN_BACKEND_LOCATION=HOST_BACKEND_LOCATION+CONTEXT_PATH_SERVICES;
 //BACKEND | END
 
