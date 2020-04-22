@@ -47,40 +47,42 @@ app.config(function($routeProvider) {
 		templateUrl : './template/itconsultant/statisticsITC2.html',
 		controller : 'itConsultantStatisticController'
 	//books
-	}).when('/register-new-book', {
-		templateUrl : './template/book/new.html',
-		controller : 'registerBookController'
-	}).when('/list-all-books', {
-		templateUrl : './template/book/list.html',
-		controller : 'listBookController'
-	}).when('/update-book/:id', {
-		templateUrl : './template/book/update.html',
-		controller : 'bookDetailsController'
-	}).when('/list-all-books-to-download', {
-		templateUrl : './template/book/listb.html',
-		controller : 'listBookController'
-	}).when('/list-all-courses', {
-		templateUrl : './template/course/list.html',
-		controller : 'listCourseController'
-	}).when('/register-new-course', {
-		templateUrl : './template/course/new.html',
-		controller : 'registerCourseController'
-	}).when('/statistiche/:code', {
-		templateUrl : './template/statistics2.html',
-		controller : 'statisticsController'
-	}).when('/update-course/:id', {
-		templateUrl : './template/course/update.html',
-		controller : 'courseDetailsController'
-	}).when('/list-all-noteTemplate', {
-		//		itconsultants
-		templateUrl : './template/noteTemplate/list.html',
-		controller : 'listNoteController'
-	}).when('/register-new-noteTemplate', {
-		templateUrl : './template/noteTemplate/new.html',
-		controller : 'RegisterNoteController'
-	}).when('/update-noteTemplate/:id', {
-		templateUrl : './template/noteTemplate/update.html',
-		controller : 'noteEditController'
+//	}).when('/register-new-book', {
+//		templateUrl : './template/book/new.html',
+//		controller : 'registerBookController'
+//	}).when('/list-all-books', {
+//		templateUrl : './template/book/list.html',
+//		controller : 'listBookController'
+//	}).when('/update-book/:id', {
+//		templateUrl : './template/book/update.html',
+//		controller : 'bookDetailsController'
+//	}).when('/list-all-books-to-download', {
+//		templateUrl : './template/book/listb.html',
+//		controller : 'listBookController'
+//	}).when('/list-all-courses', {
+//		templateUrl : './template/course/list.html',
+//		controller : 'listCourseController'
+//	}).when('/register-new-course', {
+//		templateUrl : './template/course/new.html',
+//		controller : 'registerCourseController'
+//	}).when('/statistiche/:code', {
+//		templateUrl : './template/statistics2.html',
+//		controller : 'statisticsController'
+//	}).when('/update-course/:id', {
+//		templateUrl : './template/course/update.html',
+//		controller : 'courseDetailsController'
+			
+//	}).when('/list-all-noteTemplate', {
+//		//		itconsultants
+//		templateUrl : './template/noteTemplate/list.html',
+//		controller : 'listNoteController'
+//	}).when('/register-new-noteTemplate', {
+//		templateUrl : './template/noteTemplate/new.html',
+//		controller : 'RegisterNoteController'
+//	}).when('/update-noteTemplate/:id', {
+//		templateUrl : './template/noteTemplate/update.html',
+//		controller : 'noteEditController'
+
 	}).when('/list-all-message', {
 		//		newsLetterMessage
 		templateUrl : './template/newsLetterMessage/list.html',
@@ -95,25 +97,25 @@ app.config(function($routeProvider) {
 		templateUrl : './template/interview/interview.html',
 		controller : 'interviewController'
 	//	      courseresumes
-	}).when('/list-all-courseresumes', {
-		templateUrl : './template/courseresume/list.html',
-		controller : 'listCourseResumeController'
-	}).when('/register-new-courseresume', {
-		templateUrl : './template/courseresume/new.html',
-		controller : 'registerCourseResumeController'
-	}).when('/update-courseresume/:id', {
-		templateUrl : './template/courseresume/update.html',
-		controller : 'courseResumeDetailsController'
+//	}).when('/list-all-courseresumes', {
+//		templateUrl : './template/courseresume/list.html',
+//		controller : 'listCourseResumeController'
+//	}).when('/register-new-courseresume', {
+//		templateUrl : './template/courseresume/new.html',
+//		controller : 'registerCourseResumeController'
+//	}).when('/update-courseresume/:id', {
+//		templateUrl : './template/courseresume/update.html',
+//		controller : 'courseResumeDetailsController'
 	//   originsites
-	}).when('/list-all-originsites', {
-		templateUrl : './template/originsite/list.html',
-		controller : 'listOriginSiteController'
-	}).when('/register-new-originsite', {
-		templateUrl : './template/originsite/new.html',
-		controller : 'registerOriginSiteController'
-	}).when('/update-originsite/:id', {
-		templateUrl : './template/originsite/update.html',
-		controller : 'originSiteDetailsController'
+//	}).when('/list-all-originsites', {
+//		templateUrl : './template/originsite/list.html',
+//		controller : 'listOriginSiteController'
+//	}).when('/register-new-originsite', {
+//		templateUrl : './template/originsite/new.html',
+//		controller : 'registerOriginSiteController'
+//	}).when('/update-originsite/:id', {
+//		templateUrl : './template/originsite/update.html',
+//		controller : 'originSiteDetailsController'
 	}).when('/login', {
 		templateUrl : './template/login.html',
 		controller : 'loginController'
