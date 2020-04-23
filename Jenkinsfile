@@ -62,8 +62,8 @@ pipeline {
             steps {
             sh "./mvnw clean package -DskipTests -P ${ENV}"
             echo "archiving build..."
-            sh "mkdir -p ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}/archive"
-            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}/archive"
+            sh "mkdir -p ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
+            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
             /*
             sh "mkdir -p ./dist/${BUILD_NUMBER}/${ENV}"
             sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ./dist/${BUILD_NUMBER}/${ENV}"
