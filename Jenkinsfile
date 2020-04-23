@@ -6,10 +6,13 @@ pipeline {
             description: 'Al termine di questa pipeline, vuoi consentire la promozione in ambiente di Produzione?')
     }
     environment {             
+        /*
         PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
         PACKAGING = readMavenPom().getPackaging()
         VERSION = readMavenPom().getVersion()
         ARTIFACT_FULL_FILE_NAME = "${PACKAGE_FILE_NAME}-${VERSION}.${PACKAGING}"
+        */
+        ARTIFACT_FULL_FILE_NAME = "centauri.war"
         APPLICATION_DOCKER_HOST = "rastaban"
         DEV_SERVICES_EXPOSED_PORT="9054"
         STAGE_SERVICES_EXPOSED_PORT="9055"
