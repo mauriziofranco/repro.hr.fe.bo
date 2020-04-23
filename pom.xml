@@ -96,11 +96,13 @@
 										<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
 <!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
 										<copy file="src/main/webapp/a/js/env.dev.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
+										<!--
 										<delete file="${project.build.outputDirectory}/a/js/env.prod.js" />
 										<delete file="${project.build.outputDirectory}/a/js/env.stage.js"/>
 										<delete file="${project.build.outputDirectory}/a/js/env.test.js" />
 										<delete file="${project.build.outputDirectory}/a/js/env.dev.js" />
-										<echo>Using env.dev.js</echo>
+										-->
+										<echo>Used env.dev.js!!!</echo>
 									</tasks>
 								</configuration>
 							</execution>
@@ -141,6 +143,7 @@
 										<!-- file="${project.build.outputDirectory}/a/js/env.test.js" /> -->
 										<!-- <delete -->
 										<!-- file="${project.build.outputDirectory}/a/js/env.dev.js" /> -->
+										<!-- 
 										<delete
 											dir="${project.build.directory}/centauri/common/js/env/"
 											includeemptydirs="true" />
@@ -148,6 +151,10 @@
 											dir="${project.build.directory}/centauri/common/js/env/" />
 										<copy file="src/main/webapp/a/js/env.stage.js"
 											tofile="${project.build.directory}/centauri/common/js/env/env.js" />
+											-->
+											<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
+<!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
+										<copy file="src/main/webapp/a/js/env.stage.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
 										<echo>Using env.stage.js</echo>
 									</tasks>
 								</configuration>
@@ -190,6 +197,7 @@
 										<!-- file="${project.build.outputDirectory}/a/js/env.test.js" /> -->
 										<!-- <delete -->
 										<!-- file="${project.build.outputDirectory}/a/js/env.dev.js" /> -->
+										<!-- 
 										<delete
 											dir="${project.build.directory}/centauri/common/js/env/"
 											includeemptydirs="true" />
@@ -197,6 +205,10 @@
 											dir="${project.build.directory}/centauri/common/js/env/" />
 										<copy file="src/main/webapp/a/js/env.prod.js"
 											tofile="${project.build.directory}/centauri/common/js/env/env.js" />
+											-->
+											<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
+<!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
+										<copy file="src/main/webapp/a/js/env.prod.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
 										<echo>Using env.prod.js</echo>
 									</tasks>
 								</configuration>
