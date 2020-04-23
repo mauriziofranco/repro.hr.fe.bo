@@ -15,7 +15,7 @@ pipeline {
         ARTIFACT_FULL_FILE_NAME = "centauri.war"
         DEV_TOMCAT_HOST = "eltanin"
         STAGE_TOMCAT_HOST = "ndraconis"
-        STAGE_TOMCAT_HOST = "thuban"
+        PROD_TOMCAT_HOST = "thuban"
         TARGET_ENV_TMP_FOLDER = "cerepro_resources"
         TOMCAT_WEB_APPS_FOLDER = "tomcat_webapps"
         
