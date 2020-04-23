@@ -58,7 +58,6 @@ pipeline {
             environment {
                 ENV = "dev"
                 TOMCAT_HOST = "${DEV_TOMCAT_HOST}"
-                //TOMCAT_HOST = "eltanin"
             }
             steps {
             sh "./mvnw clean package -DskipTests -P ${ENV}"
@@ -72,7 +71,7 @@ pipeline {
             sh "cp ./dist/${BUILD_NUMBER}/${ENV}/*.* ${JENKINS_HOME}/jobs/${JOB_NAME}/dist/${BUILD_NUMBER}/${ENV}"
             */
             echo "delivering build"
-            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER}  ${TOMCAT_HOST}
+            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST}"
             sh "/cerepro_resources/delivery@env.sh ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST} ${TOMCAT_WEB_APPS_FOLDER}"
             }
         }
