@@ -57,7 +57,7 @@ pipeline {
         stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT") {
             environment {
                 ENV = "dev"
-                TOMCAT_HOST = ${DEV_TOMCAT_HOST}
+                TOMCAT_HOST = "${DEV_TOMCAT_HOST}"
             }
             steps {
             sh "./mvnw clean package -DskipTests -P ${ENV}"
