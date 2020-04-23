@@ -1,7 +1,7 @@
 //prod environment
 //BACKEND | START
 var HOST_BACKEND_LOCATION="http://centauri.proximainformatica.com";
-var CONTEXT_PATH_SERVICES="/centauri.be";
+var CONTEXT_PATH_SERVICES="/cerepro.hr.backend/prod";
 var MAIN_BACKEND_LOCATION=HOST_BACKEND_LOCATION+CONTEXT_PATH_SERVICES;
 //BACKEND | END
 
