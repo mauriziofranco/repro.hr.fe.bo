@@ -21,7 +21,8 @@ pipeline {
         PROD_info_app_environment_PROPERTY="PROD"
         
     }
-    stages {        
+    stages { 
+        /*       
         stage ("DELETE DEVELOPMENT PROPERTIES FILE") {
             environment {
                 ENV_PROPERTIES_FILE = "./src/main/webapp/common/js/env/env.js"
@@ -43,6 +44,24 @@ pipeline {
                 
             }
         }        
+        */
+        stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT") {
+            environment {
+                ENV = "dev"
+            }
+            steps {
+            sh "./mvnw clean package -DskipTests -P ${ENV}"
+            sh "mkdir -p ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
+            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
+            /*
+            sh "mkdir -p ./dist/${BUILD_NUMBER}/${ENV}"
+            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ./dist/${BUILD_NUMBER}/${ENV}"
+            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/dist/${BUILD_NUMBER}/${ENV}"
+            sh "cp ./dist/${BUILD_NUMBER}/${ENV}/*.* ${JENKINS_HOME}/jobs/${JOB_NAME}/dist/${BUILD_NUMBER}/${ENV}"
+            */
+            }
+        }
+        
     }
     post {
 		always {
