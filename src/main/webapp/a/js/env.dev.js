@@ -1,7 +1,7 @@
 //dev environment
 //BACKEND | START
-var HOST_BACKEND_LOCATION="http://fenice:8080";
-var CONTEXT_PATH_SERVICES="/centauri.be";
+var HOST_BACKEND_LOCATION="http://centauri.proximainformatica.com:91";
+var CONTEXT_PATH_SERVICES="/cerepro.hr.backend";
 var MAIN_BACKEND_LOCATION=HOST_BACKEND_LOCATION+CONTEXT_PATH_SERVICES;
 //BACKEND | END
 
