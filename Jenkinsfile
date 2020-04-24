@@ -18,9 +18,7 @@ pipeline {
         PROD_TOMCAT_HOST = "thuban"
         TARGET_ENV_TMP_FOLDER = "cerepro_resources"
         TOMCAT_WEB_APPS_FOLDER = "tomcat_webapps"
-        
-        
-        
+                      
         APPLICATION_DOCKER_HOST = "rastaban"
         DEV_SERVICES_EXPOSED_PORT="9054"
         STAGE_SERVICES_EXPOSED_PORT="9055"
