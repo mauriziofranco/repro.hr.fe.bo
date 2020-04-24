@@ -7,11 +7,11 @@ pipeline {
     }
     environment {             
         /*
-        PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
         PACKAGING = readMavenPom().getPackaging()
         VERSION = readMavenPom().getVersion()
         ARTIFACT_FULL_FILE_NAME = "${PACKAGE_FILE_NAME}-${VERSION}.${PACKAGING}"
         */
+        PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
         ARTIFACT_FULL_FILE_NAME = "centauri.war"
         DEV_TOMCAT_HOST = "eltanin"
         STAGE_TOMCAT_HOST = "ndraconis"
@@ -20,40 +20,17 @@ pipeline {
         TOMCAT_WEB_APPS_FOLDER = "tomcat_webapps"
                       
         APPLICATION_DOCKER_HOST = "rastaban"
-        DEV_SERVICES_EXPOSED_PORT="9054"
-        STAGE_SERVICES_EXPOSED_PORT="9055"
-        PROD_SERVICES_EXPOSED_PORT="9056"
-        /*APPLICATION_CONTEXT_ROOT="cerepro.hr.backend"*/
+        DEV_SERVICES_EXPOSED_PORT="9057"
+        STAGE_SERVICES_EXPOSED_PORT="9058"
+        PROD_SERVICES_EXPOSED_PORT="9059"
         DOCKER_HOST_CONTAINER_NAME_PREFIX="${PACKAGE_FILE_NAME}"
+        /*APPLICATION_CONTEXT_ROOT="cerepro.hr.backend"*/
         DEV_info_app_environment_PROPERTY="DEV"
         STAGE_info_app_environment_PROPERTY="STAGE"
         PROD_info_app_environment_PROPERTY="PROD"
         
     }
-    stages { 
-        /*       
-        stage ("DELETE DEVELOPMENT PROPERTIES FILE") {
-            environment {
-                ENV_PROPERTIES_FILE = "./src/main/webapp/common/js/env/env.js"
-            }
-            steps {
-                echo "Deleting file: ${ENV_PROPERTIES_FILE}"
-                sh "rm ${ENV_PROPERTIES_FILE}"
-            }
-        }
-        stage ("PREPARE FULL PACKAGE(and archive it!!") {
-            steps {
-                
-                echo "Preparing artifact: ${ARTIFACT_FULL_FILE_NAME}"
-                sh "./mvnw clean package -DskipTests"
-                echo "Archiving artifact: ${ARTIFACT_FULL_FILE_NAME}"
-                sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ./${ARTIFACT_FULL_FILE_NAME}"
-                archiveArtifacts artifacts: "${ARTIFACT_FULL_FILE_NAME}", onlyIfSuccessful: true
-                archiveArtifacts artifacts: "Dockerfile", onlyIfSuccessful: true
-                
-            }
-        }        
-        */
+    stages {         
         stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT") {
             environment {
                 ENV = "dev"
@@ -104,6 +81,23 @@ pipeline {
 	            echo "delivering build..."
 	            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST}"
 	            sh "/cerepro_resources/delivery@env.sh ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST} ${TOMCAT_WEB_APPS_FOLDER}"
+            }
+        }
+        stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT --> DOCKERIZED") {
+            environment {
+                ENV = "dev"
+                TOMCAT_HOST = "${DEV_TOMCAT_HOST}"
+            }
+            steps {
+	            sh "./mvnw clean package -DskipTests -P ${ENV}"
+	            echo "archiving build..."
+	            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
+	            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
+	            echo "MOVING files on docker host"
+                sh "/cerepro_resources/scp_on_docker_host.sh ${JOB_NAME} ${BUILD_NUMBER} ${ARTIFACT_FULL_FILE_NAME} cerepro_resources ${APPLICATION_DOCKER_HOST}"
+                sh "/cerepro_resources/scp_on_docker_host.sh ${JOB_NAME} ${BUILD_NUMBER} Dockerfile cerepro_resources ${APPLICATION_DOCKER_HOST}"
+                echo "EXECUTING DEV ENVIRONEMNT PROMOTION"
+                sh "/cerepro_resources/delivery_on_docker@env.sh ${DEV_SERVICES_EXPOSED_PORT} ${ENV} ${DOCKER_HOST_CONTAINER_NAME_PREFIX} ${BUILD_NUMBER}"
             }
         }
         
