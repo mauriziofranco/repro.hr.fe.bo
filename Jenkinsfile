@@ -20,9 +20,9 @@ pipeline {
         TOMCAT_WEB_APPS_FOLDER = "tomcat_webapps"
                       
         APPLICATION_DOCKER_HOST = "rastaban"
-        DEV_SERVICES_EXPOSED_PORT="9057"
-        STAGE_SERVICES_EXPOSED_PORT="9058"
-        PROD_SERVICES_EXPOSED_PORT="9059"
+        DEV_SERVICES_EXPOSED_PORT="9054"
+        STAGE_SERVICES_EXPOSED_PORT="9055"
+        PROD_SERVICES_EXPOSED_PORT="9056"
         DOCKER_HOST_CONTAINER_NAME_PREFIX="${PACKAGE_FILE_NAME}"
         /*APPLICATION_CONTEXT_ROOT="cerepro.hr.backend"*/
         DEV_info_app_environment_PROPERTY="DEV"
