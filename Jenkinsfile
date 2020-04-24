@@ -145,6 +145,7 @@ pipeline {
         }
         
     }
+    
     post {
 		always {
 			mail to: 'm.franco@proximanetwork.it',
