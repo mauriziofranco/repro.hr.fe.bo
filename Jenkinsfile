@@ -33,60 +33,6 @@ pipeline {
         
     }
     stages {   
-    /*      
-        stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT") {
-            environment {
-                ENV = "dev"
-                TOMCAT_HOST = "${DEV_TOMCAT_HOST}"
-            }
-            steps {
-	            sh "./mvnw clean package -DskipTests -P ${ENV}"
-	            echo "archiving build..."
-	            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            /*
-	            sh "mkdir -p ./dist/${BUILD_NUMBER}/${ENV}"
-	            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ./dist/${BUILD_NUMBER}/${ENV}"
-	            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/dist/${BUILD_NUMBER}/${ENV}"
-	            sh "cp ./dist/${BUILD_NUMBER}/${ENV}/*.* ${JENKINS_HOME}/jobs/${JOB_NAME}/dist/${BUILD_NUMBER}/${ENV}"
-	            */
-	            echo "delivering build..."
-	            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST}"
-	            sh "/cerepro_resources/delivery@env.sh ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST} ${TOMCAT_WEB_APPS_FOLDER}"
-            }
-        }
-        stage ("PREPARE AND DELIVERY FOR STAGE ENVIRONMENT") {
-            environment {
-                ENV = "stage"
-                TOMCAT_HOST = "${STAGE_TOMCAT_HOST}"
-            }
-            steps {
-	            sh "./mvnw clean package -DskipTests -P ${ENV}"
-	            echo "archiving build..."
-	            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            echo "delivering build..."
-	            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST}"
-	            sh "/cerepro_resources/delivery@env.sh ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST} ${TOMCAT_WEB_APPS_FOLDER}"
-            }
-        }
-        stage ("PREPARE AND DELIVERY FOR PROD ENVIRONMENT") {
-            when { expression { return params.PROMOTE_ON_PRODUCTION } }
-            environment {
-                ENV = "prod"
-                TOMCAT_HOST = "${PROD_TOMCAT_HOST}"
-            }
-            steps {
-	            sh "./mvnw clean package -DskipTests -P ${ENV}"
-	            echo "archiving build..."
-	            sh "mkdir -p ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            sh "cp ./target/${ARTIFACT_FULL_FILE_NAME} ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/${ENV}"
-	            echo "delivering build..."
-	            sh "/cerepro_resources/scp_put@env.sh ${JOB_NAME} ${BUILD_NUMBER} ${ENV} ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST}"
-	            sh "/cerepro_resources/delivery@env.sh ${ARTIFACT_FULL_FILE_NAME} ${TARGET_ENV_TMP_FOLDER} ${TOMCAT_HOST} ${TOMCAT_WEB_APPS_FOLDER}"
-            }
-        }
-        */
         stage ("PREPARE AND DELIVERY FOR DEVELOPMENT ENVIRONMENT --> DOCKERIZED") {
             environment {
                 ENV = "dev"
@@ -105,7 +51,6 @@ pipeline {
                 sh "/cerepro_resources/delivery_on_docker@env.sh ${DEV_SERVICES_EXPOSED_PORT} ${ENV} ${DOCKER_HOST_CONTAINER_NAME_PREFIX} ${BUILD_NUMBER}"
             }
         }
-        
         stage ("PREPARE AND DELIVERY FOR STAGE ENVIRONMENT --> DOCKERIZED") {
             environment {
                 ENV = "stage"         
@@ -124,7 +69,7 @@ pipeline {
                 sh "/cerepro_resources/delivery_on_docker@env.sh ${DEV_SERVICES_EXPOSED_PORT} ${ENV} ${DOCKER_HOST_CONTAINER_NAME_PREFIX} ${BUILD_NUMBER}"
             }
         }
-        stage ("PREPARE AND DELIVERY FOR STAGE ENVIRONMENT --> DOCKERIZED") {
+        stage ("PREPARE AND DELIVERY FOR PRODUCTION ENVIRONMENT --> DOCKERIZED") {
             when { expression { return params.PROMOTE_ON_PRODUCTION } }
             environment {
                 ENV = "prod"         
