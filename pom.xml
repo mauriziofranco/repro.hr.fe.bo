@@ -17,6 +17,8 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<package.file.name>repro.hr.fe.bo</package.file.name>
+		<property.file.name>env.js</property.file.name>
+		<development.property.file.fullpath>${project.build.directory}/${package.file.name}/common/js/env/${property.file.name}</development.property.file.fullpath>
 	</properties>
 
 	<build>
@@ -26,58 +28,21 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.2</version>
-<!-- 				<configuration> -->
-<!-- 					<encoding>UTF-8</encoding> -->
-<!-- 					<outputFileNameMapping>@{groupId}@-@{artifactId}@-@{baseVersion}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping> -->
-<!--  					<outputFileNameMapping>centauri.war</outputFileNameMapping> -->
-<!-- 				</configuration> -->
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.springframework.boot</groupId> -->
-			<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
-			<!-- <configuration> -->
-			<!-- <webResources> -->
-			<!-- <resource> -->
-			<!-- this is relative to the pom.xml directory -->
-			<!-- <directory>src/main/resources/static</directory> -->
-			<!-- </resource> -->
-			<!-- </webResources> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-dependency-plugin</artifactId> -->
-			<!-- <version>3.0.2</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>copy-dependencies</id> -->
-			<!-- <phase>package</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>copy-dependencies</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <outputDirectory>${project.basedir}/target/external_libraries</outputDirectory> -->
-			<!-- <overWriteReleases>true</overWriteReleases> -->
-			<!-- <overWriteSnapshots>true</overWriteSnapshots> -->
-			<!-- <overWriteIfNewer>true</overWriteIfNewer> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 		</plugins>
 	</build>
 
 	<profiles>
 		<profile>
 			<id>dev</id>
-			<!-- <properties> -->
-			<!-- <env>application.dev</env> -->
-			<!-- </properties> -->
+			<properties>
+				<env.property.file.name>env.dev.js</env.property.file.name>
+			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<build>
-				<plugins>				    
+				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
@@ -90,17 +55,10 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<echo>selected dev profile</echo>
-										<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
-<!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
-										<copy file="src/main/webapp/a/js/env.dev.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
-										<!--
-										<delete file="${project.build.outputDirectory}/a/js/env.prod.js" />
-										<delete file="${project.build.outputDirectory}/a/js/env.stage.js"/>
-										<delete file="${project.build.outputDirectory}/a/js/env.test.js" />
-										<delete file="${project.build.outputDirectory}/a/js/env.dev.js" />
-										-->
-										<echo>Used env.dev.js!!!</echo>
+										<echo>Using property file: ${env.property.file.name}</echo>
+										<echo>Target property file: ${property.file.name}</echo>																	
+										<copy file="src/main/webapp/a/js/${env.property.file.name}" tofile="${project.build.directory}/${package.file.name}/common/js/env/${property.file.name}" /> 
+										<echo>${env.property.file.name} file, successfully copied!!</echo>
 									</tasks>
 								</configuration>
 							</execution>
@@ -108,12 +66,12 @@
 					</plugin>
 				</plugins>
 			</build>
-		</profile>		
+		</profile>
 		<profile>
 			<id>stage</id>
-			<!-- <properties> -->
-			<!-- <env>application.stage</env> -->
-			<!-- </properties> -->
+			<properties>
+				<env.property.file.name>env.stage.js</env.property.file.name>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -128,32 +86,10 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<echo>selected stage profile</echo>
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.js" /> -->
-										<!-- <copy -->
-										<!-- file="src/main/webapp/a/js/env.stage.js" -->
-										<!-- tofile="${project.build.outputDirectory}/a/js/env.stage.js" 
-											/> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.prod.js" /> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.test.js" /> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.dev.js" /> -->
-										<!-- 
-										<delete
-											dir="${project.build.directory}/centauri/common/js/env/"
-											includeemptydirs="true" />
-										<mkdir
-											dir="${project.build.directory}/centauri/common/js/env/" />
-										<copy file="src/main/webapp/a/js/env.stage.js"
-											tofile="${project.build.directory}/centauri/common/js/env/env.js" />
-											-->
-											<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
-<!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
-										<copy file="src/main/webapp/a/js/env.stage.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
-										<echo>Using env.stage.js</echo>
+										<echo>Using property file: ${env.property.file.name}</echo>
+										<echo>Target property file: ${property.file.name}</echo>																	
+										<copy file="src/main/webapp/a/js/${env.property.file.name}" tofile="${project.build.directory}/${package.file.name}/common/js/env/${property.file.name}" /> 
+										<echo>${env.property.file.name} file, successfully copied!!</echo>
 									</tasks>
 								</configuration>
 							</execution>
@@ -164,9 +100,9 @@
 		</profile>
 		<profile>
 			<id>prod</id>
-			<!-- <properties> -->
-			<!-- <env>application.prod</env> -->
-			<!-- </properties> -->
+			<properties>
+				<env.property.file.name>env.prod.js</env.property.file.name>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -181,40 +117,18 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<echo>selected prod profile</echo>
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.js" /> -->
-										<!-- <copy -->
-										<!-- file="src/main/webapp/a/js/env.prod.js" -->
-										<!-- tofile="${project.build.outputDirectory}/a/js/env.prod.js" 
-											/> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.stage.js" 
-											/> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.test.js" /> -->
-										<!-- <delete -->
-										<!-- file="${project.build.outputDirectory}/a/js/env.dev.js" /> -->
-										<!-- 
-										<delete
-											dir="${project.build.directory}/centauri/common/js/env/"
-											includeemptydirs="true" />
-										<mkdir
-											dir="${project.build.directory}/centauri/common/js/env/" />
-										<copy file="src/main/webapp/a/js/env.prod.js"
-											tofile="${project.build.directory}/centauri/common/js/env/env.js" />
-											-->
-											<delete file="${project.build.directory}/centauri/common/js/env/env.js"  />
-<!-- 										<mkdir dir="${project.build.directory}/centauri/common/js/env/" /> -->
-										<copy file="src/main/webapp/a/js/env.prod.js" tofile="${project.build.directory}/centauri/common/js/env/env.js" />
-										<echo>Using env.prod.js</echo>
+										<echo>Using property file: ${env.property.file.name}</echo>
+										<echo>Target property file: ${property.file.name}</echo>																	
+										<copy file="src/main/webapp/a/js/${env.property.file.name}" tofile="${project.build.directory}/${package.file.name}/common/js/env/${property.file.name}" /> 
+										<echo>${env.property.file.name} file, successfully copied!!</echo>
 									</tasks>
 								</configuration>
 							</execution>
 						</executions>
 					</plugin>
-					
+
 				</plugins>
+
 			</build>
 		</profile>
 	</profiles>
