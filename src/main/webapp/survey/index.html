@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="../common/css/ext/bootstrap/4.2.1/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/surveyforcandidate.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/buttons.css">
+    <script src="../common/js/env/env.js"></script>
+    <link rel="icon" href="../common/img/centauri/favicon/centaurifav.png" sizes="16x16" type="image/png">
+   
+    <script src='js/surveyforcandidate.js'></script>
+    <script src='../common/js/ext/jquery/3.3.1/jquery-3.3.1.min.js'></script>
+    <title>Proxima Informatica S.p.A. - Questionario d'ingresso</title>
+
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body id="body" onload="initializetoken();">
+
+
+
+
+
+
+
+
+
+
+
+    <header id="masthead" class="site-header" role="banner">
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#iconTool").click(function () {
+                    jQuery(this).attr("style", "cursor:default");
+                    jQuery("#wTooltip").show(200, "linear", function () {
+                        jQuery("#close").attr("style", "display:inline-block;");
+                    });
+                });
+                jQuery("#close").click(function () {
+                    jQuery("#iconTool").attr("style", "cursor:pointer;");
+                    jQuery("#wTooltip").hide(200, "linear", function () {
+                        jQuery("#close").attr("style", "display:none;");
+                    });
+                });
+            });
+        </script>
+        <div class="header-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-8 col-xs-offset-1 col-xs-11">
+                        <a href="http://www.proximainformatica.com/" title="Proxima Informatica">
+                            <img class="site-logo" src="http://www.proximainformatica.com/wp-content/uploads/2017/11/LOGO-PROXIMA-ROSSO-white-2017.png"
+                                alt="Proxima Informatica" "/>
+                        </a>
+                    </div>
+
+                </div>
+                <div style="float: right; text-align: left !important">
+                    <div class="aps-social-icon-wrapper">
+                        <div class="aps-group-horizontal">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <div id="start" align="center">
+        <h1>Corso Full Stack Developer.</h1>
+        <h2>Questionario d'ingresso.</h2>
+        <br>
+        <p>
+            Gentile candidato, questa è la pagina di presentazione del questionario d'ingresso utile per la partecipazione al prossimo
+            corso Full Stack Developer in partenza.</br>La preghiamo di compilare il questionario in base alle sue attuali conoscenze.</br> Questo
+            ci permetterà di avere idea delle sue attuali competenze, e poter quindi, organizzare al meglio il corso stesso.
+        </p>
+        <p>
+            Attenzione, il questionario va terminato entro il tempo massimo che vedrà in alto a sinistra, una volta iniziata la compilazione. 
+            <br/>Clicchi sul link qui in basso solo quando effettivamente vorrà compilare il questionario.  
+<!--             <br/>Avrà solo una possibilità di compilare il questionario. -->
+        </p>
+        <input type="hidden" name="token" id="token" value="">
+        <!-- 			evento che inizia timer,  insert surveyReply startSurvey();-->
+        <input type="button" id="startSurvey" value="Inizia il questionario" onclick="startSurvey();">
+    </div>
+
+
+	<span id="time" ></span><br>
+    <div id="survey" align="center">
+        <div id="pagination" align="center"></div>
+        
+        <h2 id="question" align="center"></h2>
+        <form>
+
+            <label id="label"></label>
+            <br>
+            <label id="description"></label>
+            <br>
+            <br>
+            <table>
+                <tr id="tabA">
+                    <td>
+                        <input type="checkbox" name="ansa" id="ansa">
+                    </td>
+                    <td>
+                        <label id="labelA"> A. - </label>
+                        <label id="optA"></label>
+                    </td>
+                </tr>
+                <tr id="tabB">
+                    <td>
+                        <input type="checkbox" name="ansb" id="ansb">
+                    </td>
+                    <td>
+                        <label id="labelB"> B. - </label>
+                        <label id="optB"></label>
+                    </td>
+                </tr>
+
+                <tr id="tabC">
+                    <td>
+                        <input type="checkbox" name="ansc" id="ansc">
+                    </td>
+                    <td>
+                        <label id="labelC"> C. - </label>
+                        <label id="optC"></label>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr id="tabD">
+                    <td>
+                        <input type="checkbox" name="ansd" id="ansd">
+                    </td>
+                    <td>
+                        <label id="labelD"> D. - </label>
+                        <label id="optD"></label>
+                    </td>
+                </tr>
+
+                <tr id="tabE">
+                    <td>
+                        <input type="checkbox" name="anse" id="anse">
+                    </td>
+                    <td>
+                        <label id="labelE"> E. - </label>
+                        <label id="optE"></label>
+                    </td>
+                </tr>
+                <tr id="tabF">
+                    <td>
+                        <input type="checkbox" name="ansf" id="ansf">
+                    </td>
+                    <td>
+                        <label id="labelF"> F. - </label>
+                        <label id="optF"></label>
+                    </td>
+                </tr>
+                <tr id="tabG">
+                    <td>
+                        <input type="checkbox" name="ansg" id="ansg">
+                    </td>
+                    <td>
+                        <label id="labelG"> G. - </label>
+                        <label id="optG"></label>
+                    </td>
+                </tr>
+                <tr id="tabH">
+                    <td>
+                        <input type="checkbox" name="ansh" id="ansh">
+                    </td>
+                    <td>
+                        <label id="labelH"> H. - </label>
+                        <label id="optH"></label>
+                    </td>
+                </tr>
+                <tr id="tabI">
+                    <td>
+                        <input type="checkbox" name="ansi" id="ansi">
+                    </td>
+                    <td>
+                        <label id="labelI"> I. - </label>
+                        <label id="optI"></label>
+                    </td>
+                </tr>
+                <tr id="tabJ">
+                    <td>
+                        <input type="checkbox" name="ansj" id="ansj">
+                    </td>
+                    <td>
+                        <label id="labelJ"> J. - </label>
+                        <label id="optJ"></label>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="buttons">
+                <button class="btn btn-secondary sw-btn-back" id="back" type="button" onclick="previousQuestion()" >Indietro</button>
+                <button class="btn btn-secondary sw-btn-next" id="forward" type="button" onclick="nextQuestion()" >Avanti</button>
+            </div>
+            <div id="send" align="center">
+                <input type="button" id="sendSurvey" value="Termina il questionario" onclick="sendCompiledSurvey();">
+            </div>
+            <input type="hidden" name="id" id="idQuestion" value="">
+            <input type="hidden" name="id" id="idSurveyReply" value="">
+            <input type="hidden" name="id" id="userID" value="">
+            <input type="hidden" name="id" id="surveyID" value="">
+            <input type="hidden" name="id" id="tokenID" value="">
+
+
+
+
+
+
+        </form>
+    </div>
+    <div id="surveySubmitted" align="center">
+        <h1 id="mess"></h1>
+    </div>
+    <footer>
+        <img src="../common/img/centauri/logo/centauri.png" id="footerimage" title="ProximaInformatica" >
+
+    </footer>
+</body>
+
+</html>

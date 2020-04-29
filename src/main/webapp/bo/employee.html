@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/css/modal.css">
+		<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+		
+		<script type="text/javascript">
+		
+		var resourceApi = "/centauri/api/v1/employee/";
+	
+// 		var userId ="employee.table.userId";
+// 		var mobile ="employee.table.mobile";
+// 		var domicileCity ="employee.table.domicileCity";
+// 		var domicile_street_name ="employee.table.domicileStreetName";
+// 		var domicileHouseNumber ="employee.table.domicileHouseNumber";
+// 		var cvExternalPath ="employee.table.cvExternalPath";
+var tabTitle = 'List Employee Page';
+	var pageTitle = 'List Employee';
+
+		</script>
+		
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/employee.js"></script>
+	</head>
+	<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html"></div>
+		<div id="header">
+		<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+	
+		<!-- The Modal -->
+		<div id="detailModal" style="display:none">
+	
+			<!-- Modal content -->
+			<div id="modalContent" align="center">
+				<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+				 	   <label id="insertLabel">employee.insert.label</label>
+				 	   <br>
+				  	   <label id="editLabel">employee.modifica.label</label>
+				  <br><br>
+						<!-- User Id -->
+					  <label>User id:</label><br>
+					  <select id="userId"> </select><br><br>
+					  <label id="userIdError" style="display:none;color:red;">employee.error.userid</label>
+					  <br><br>
+						<!--  Mobile -->
+					  <label>Mobile:</label><br>
+					  <input type="text" name="mobile" id="mobile" value=""><br><br>
+					  <label id="mobileError" style="display:none">employee.error.mobile</label><br>
+						<!--  Domicile city -->
+					  <label>Domicile city:</label><br>
+					  <input type="text" name="domicileCity" id="domicileCity" value=""><br><br>
+					  <label id="domicileCityError" style="display:none">employee.error.domicilecity</label><br>
+					  <!--  Domicile_street_name-->
+					  <label>Domicile street name:</label><br>
+					  <input type="text" name="domicileStreetName" id="domicileStreetName" value=""><br><br>
+					  <label id="domicileStreetNameError" style="display:none">employee.error.domicilestreetname</label><br>
+					  <!--  Domicile_street_numbe -->
+					  <label>Domicile house number:</label><br>
+					  <input type="text" name="domicileHouseNumber" id="domicileHouseNumber" value=""><br><br>
+					  <label id="domicileHouseNumberError" style="display:none">employee.error.domicilehousenumber</label><br>
+					  <!--  Cv_external_path -->
+					  <label>Cv external path:</label><br>
+					  <input type="text" name="cvExternalPath" id="cvExternalPath" value="" placeholder="insert cv External Path here..."><br><br>
+					  <label id="cvExternalPathError" style="display:none">employee.error.cvexternalpath</label><br>
+					  
+					  
+					
+					  <input type="button" id="editButton" value="Modifica dati" onclick="update();"> 
+					  <input type="button" id="insertButton" value="Inserisci dati" onclick="insert();">
+					  <input type="hidden" name="id" id="idEmployee" value="">
+			</div>
+		</div>
+	</body>
+	<script src="/js/common.js"></script>
+	 <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

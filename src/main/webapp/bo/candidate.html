@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/modal.css">
+		<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+
+		<script type="text/javascript">
+		
+		var candidateApi = '/centauri/api/v1/candidate/';
+		var resourceApi = '/centauri/api/v1/candidate/';
+		var tabTitle = 'List Candidate Page';
+ 		var pageTitle = 'List Candidate';
+		</script>
+		<script src='js/jquery-3.3.1.js'></script>
+		<script src='js/candidate.js'></script>
+<!-- 		<title><fmt:message key="candidate.homeName.title"/></title> -->
+	</head>
+	<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html">
+	</div>
+<div id="header">
+		<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+
+	<!-- The Modal -->
+	<div id="detailModal" style="display:none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			<form id="candidateForm" action="" method="POST">
+<!-- 			  <label id="insertLabel"><fmt:message key="candidate.label.insert"/></label> -->
+<!-- 			  <label id="updateLabel"><fmt:message key="candidate.label.update"/></label> -->
+			  <label id="insertLabel">Insert a new Candidate</label>
+			  <label id="editLabel">Edit Candidate's fields</label>
+			  <br><br>
+<!-- 			  <fmt:message key="candidate.table.domicile_city"/>: <br> -->
+			  User Id: <br>
+			  <select id="userId"> </select><br><br>
+			  Domicile City: <br>
+			  	  <input type="text" name="domicile_city" id="domicile_city" value=""><br><br>
+<!-- 			  <fmt:message key="candidate.table.domicile_street_name"/>: <br> -->
+			  Domicile Street Name: <br>
+				  <input type="text" name="domicile_street_name" id="domicile_street_name" value=""><br><br>
+<!-- 			  <fmt:message key="candidate.table.domicile_house_number"/>: <br> -->
+			  Domicile House Number: <br>
+				  <input type="text" name="domicile_house_number" id="domicile_house_number" value=""><br><br>
+<!-- 			  <fmt:message key="candidate.table.study_qualification"/>: <br> -->
+			  Study Qualification: <br>
+			  	  <input type="text" name="study_qualification" id="study_qualification" value=""><br><br>
+<!-- 			  <fmt:message key="candidate.table.mobile"/>: <br> -->
+			  Mobile: <br>
+				  <input type="text" name="mobile" id="mobile" value=""><br><br>
+<!-- 			  <fmt:message key="candidate.table.cv_external_path"/>: <br> -->
+			  CV External Path: <br>
+				  <input type="text" name="cv_external_path" id="cv_external_path" value=""><br><br>
+<!-- 			  <input type="checkbox" name="graduate" id="graduate" > <fmt:message key="candidate.table.graduate"/><br> -->
+<!-- 			  <input type="checkbox" name="high_graduate" id="high_graduate" > <fmt:message key="candidate.table.high_graduate"/> <br> -->
+<!-- 			  <input type="checkbox" name="still_high_study" id="still_high_study" > <fmt:message key="candidate.table.still_high_study"/><br><br> -->
+				  
+			 <input type="checkbox" name="graduate" id="graduate" >Graduate<br>
+			  <input type="checkbox" name="high_graduate" id="high_graduate" >High Graduate <br>
+			  <input type="checkbox" name="still_high_study" id="still_high_study" >Still High Study<br><br>
+				  <input type="button" id="editButton" value="Edit" onclick="update();">  
+				   <input type="button" id="insertButton" value="Insert a new Candidate" onclick="insert();">
+				  <input type="hidden" name="id" id="idCandidate" value="">
+			</form>
+		</div>
+	</div>
+	
+</body>
+<script src='js/common.js'></script>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+</html>

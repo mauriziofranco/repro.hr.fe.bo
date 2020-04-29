@@ -23,7 +23,7 @@ app.controller('registerAccountController', function($scope, $http, $location, $
   }
 
   $scope.validatePwd = function() {
-    if ($scope.user.password != null && ($scope.user.password.length < 3 || $scope.user.password.length > 20)) {console.log('Password non valida');
+    if ($scope.user.password != null && ($scope.user.password.length < 8 || $scope.user.password.length > 50)) {console.log('ciao');
       $scope.pwdLength = true;
     } else {
       $scope.pwdLength = false;

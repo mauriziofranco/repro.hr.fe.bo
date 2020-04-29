@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="it" ng-app="userregistrationsystem">
+<!--<![endif]-->
+<head>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<meta charset="utf-8">
+<title>SkillView - Home Page</title>
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<link rel="icon" href="../common/img/logo/favicon/centaurifavi.png"
+	sizes="16x16" type="image/png">
+<!-- ================== BEGIN BASE CSS STYLE ================== -->
+<link href="./app/css/bootstrap.css" rel="stylesheet">
+<!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	crossorigin="anonymous">
+<link href="./app/css/style.css" rel="stylesheet">
+<link href="./app/css/style-responsive.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
+<!-- ================== END BASE CSS STYLE ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+<link href="./app/css/jquery-jvectormap.css" rel="stylesheet">
+<link href="./app/css/bootstrap_calendar.css" rel="stylesheet">
+<link href="./app/css/nv.css" rel="stylesheet">
+<!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+<link href="./app/css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="./app/css/jquery.css" rel="stylesheet">
+<link href="./app/css/css.css" rel="stylesheet">
+<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+<!-- ================== BEGIN PROXIMA CSS ================== -->
+<link href="./app/css/content.css" rel="stylesheet">
+<link href="./app/css/notice.css" rel="stylesheet">
+<link href="./app/css/skillviewIcon.css" rel="stylesheet">
+<!-- ================== END PROXIMA CSS ================== -->
+
+
+
+<style>
+@media print {
+	#ghostery-purple-box {
+		display: none !important
+	}
+}
+</style>
+
+</head>
+<body class="pace-done">
+	<div class="pace  pace-inactive">
+		<!-- begin #page-loader bar -->
+		<div class="pace  pace-inactive">
+			<div class="pace-progress" style="width: 100%;"
+				data-progress-text="100%" data-progress="99">
+				<div class="pace-progress-inner"></div>
+			</div>
+			<div class="pace-activity"></div>
+		</div>
+		<!-- end #page-loader bar -->
+		<div class="pace-progress" style="width: 100%;"
+			data-progress-text="100%" data-progress="99">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade show d-none">
+		<span class="spinner"></span>
+	</div>
+	<!-- end #page-loader -->
+
+	<!-- begin #page-container -->
+	<div id="page-container"
+		class="fade page-sidebar-fixed page-header-fixed show">
+		<!-- begin #header -->
+		<div id="header" class="header navbar-default">
+
+			<!-- begin navbar-header -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle"
+					data-click="sidebar-toggled">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"
+					style="padding: 0px; margin: auto; margin-top: 8px; width: 220px;"><img
+					src="http://centauri.proximainformatica.com/centauri/common/img/centauri/logo/centauri.png"
+					style="margin-left: 8px; margin-top: 5px; height: 70%; width: auto;"
+					title="mycompanylogo">
+					<label class="skillview">SkillViewHR</label>
+				</a>
+			</div>
+			<!-- end navbar-header -->
+
+			<!-- begin header-nav -->
+			<ul class="navbar-nav navbar-right">
+				<li class="nav-authenticated" ng-show="authenticated">
+				<a href="#/update-user/{{userLogged.id}}">
+				<span class="glyphicon glyphicon-user"></span> {{userLogged.email}}</a></li>
+				<li class="nav-authenticated" ng-show="authenticated"><a href="#/logout">
+				<span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+			</ul>
+			<!-- end header navigation right -->
+		</div>
+		<!-- end #header -->
+
+		<!-- begin #sidebar -->
+		<div id="sidebar" class="sidebar"  ng-show="authenticated">
+			<!-- begin sidebar scrollbar -->
+			<div class="slimScrollDiv"
+				style="position: relative; overflow: hidden; width: auto; height: 100%;">
+				<div data-scrollbar="true" data-height="100%"
+					style="overflow: hidden; width: auto; height: 100%;"
+					data-init="true">
+					<!-- begin sidebar nav -->
+					<br>
+					<ul class="nav" ng-if="authenticated">
+						<!-- 					<li class="nav-header">Navigation</li> -->
+
+						<li class="has-sub"><a href="#/list-all-candidates"> <i
+								class="fas fa-address-book"></i> <span>Candidati</span>
+						</a>
+							<ul class="sub-menu">
+								<li class="has-sub" ng-repeat="current in codes"><a
+									ng-href="#/list-all-candidates/{{current.code}}"> <span>{{current.code}}</span>
+								</a></li>
+							</ul>
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-file"></i> <span>CandidateStates</span>
+								<ul class="sub-menu" style="display: none;">
+
+									<li class="has-sub"><a href="#/list-all-candidateStates">
+											<span>Lista CandidateStates</span>
+									</a></li>
+
+
+
+						</ul></li>
+						<li class="has-sub"><a href="#/list-all-usersurveytoken">
+								<i class="fas fa-list-ul"></i> <span>Questionari</span>
+						</a></li>
+						<!-- 						<li class="has-sub"><a href="#/list-all-interviewreplies"> -->
+						<!-- 								<i class="fas fa-list-ul"></i> <span>Interviste</span> -->
+						<!-- 						</a></li> -->
+
+						<!-- 						<li class="has-sub"><a href="#home"> <i -->
+						<!-- 								class="far fa-chart-bar"></i> <span>Statistiche</span> -->
+						<!-- 						</a></li> -->
+						<li class="has-sub"><a href="#home"> <i
+								class="fas fa-address-book"></i> <span>Statistiche</span>
+						</a>
+							<ul class="sub-menu">
+								<li class="has-sub" ng-repeat="current in codes"><a
+									ng-href="#statistiche/{{current.code}}"> <span>{{current.code}}</span>
+								</a></li>
+							</ul>
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-address-card"></i> <span>Consulenti
+									IT</span>
+						</a>
+							<ul class="sub-menu" style="display: none;">
+
+								<li class="has-sub"><a href="#/list-all-itconsultants">
+										<span>Lista Consulenti IT</span>
+								</a></li>
+
+
+								<li class="has-sub"><a href="#/register-new-itconsultant">
+										<span>Nuovo Consulente IT</span>
+								</a></li>
+								<li class="has-sub"><a
+									href="#/register-newSmart-itconsultant"> <span>Nuovo
+											Consulente IT Smart</span>
+								</a></li>
+
+	                     <li class="has-sub"><a href="#/statistics-itconsultant">
+										<span>Statistica Consulenti IT</span>
+								</a></li>
+								  <li class="has-sub"><a href="#/statistics-itconsultant2">
+										<span>Statistica Consulenti IT2</span>
+								</a></li>
+							</ul></li>
+
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fa fa-book"></i> <span>Libri</span>
+						</a>
+							<ul class="sub-menu" style="display: none;">
+
+								<li class="has-sub"><a href="#/list-all-books"> <span>Lista
+											Libri</span>
+								</a></li>
+
+
+								<li class="has-sub"><a href="#/register-new-book"><span>Nuovo
+											Libro</span> </a></li>
+
+								<li class="has-sub"><a href="#/list-all-books-to-download">
+										<span>Libri da scaricare</span> <i class="fa fa-download"></i>
+								</a></li>
+
+							</ul></li>
+
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-file"></i> <span>Corsi</span>
+						</a>
+							<ul class="sub-menu" style="display: none;">
+
+								<li class="has-sub"><a href="#/list-all-courses"> <span>Lista
+											Corsi</span>
+								</a></li>
+
+
+								<li class="has-sub"><a href="#/register-new-course"><span>Nuovo
+											Corso</span> </a></li>
+							</ul></li>
+
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-file"></i> <span>Note</span>
+								<ul class="sub-menu" style="display: none;">
+
+									<li class="has-sub"><a href="#/list-all-noteTemplate">
+											<span>Lista Note</span>
+									</a></li>
+
+
+									<li class="has-sub"><a href="#/register-new-noteTemplate">
+											<span>Nuovo Nota</span>
+									</a></li>
+								</ul></li>
+
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-address-card"></i> <span>Riepilogo
+									corsi</span></a>
+							<ul class="sub-menu" style="display: none;">
+
+								<li class="has-sub"><a href="#/list-all-courseresumes">
+										<span>Lista riepilogo corsi</span>
+								</a></li>
+
+
+								<li class="has-sub"><a href="#/register-new-courseresume">
+										<span>Nuovo corso smart</span>
+								</a></li>
+							</ul></li>
+
+						<li class="has-sub expand"><a href="javascript:;"> <b
+								class="caret"></b> <i class="fas fa-address-card"></i> <span>Siti
+									di provenienza</span></a>
+							<ul class="sub-menu" style="display: none;">
+
+								<li class="has-sub"><a href="#/list-all-originsites"> <span>Lista
+											Siti di provenienza</span>
+								</a></li>
+
+
+								<li class="has-sub"><a href="#/register-new-originsite">
+										<span>Nuovo sito di provenienza</span>
+								</a></li>
+							</ul></li>
+
+						</ul>
+
+					<!-- begin sidebar minify button -->
+					<li><a href="javascript:;" class="sidebar-minify-btn"
+						data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+					<!-- end sidebar minify button -->
+					</ul>
+					<!-- end sidebar nav -->
+				</div>
+				<div class="slimScrollBar"
+					style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 155.269px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 486.218px;"></div>
+				<div class="slimScrollRail"
+					style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div>
+			</div>
+			<!-- end sidebar scrollbar -->
+		</div>
+		<!-- end #sidebar -->
+
+		<!-- begin #content -->
+		<div id="content" ng-view></div>
+		<!-- end #content -->
+
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;"
+			class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade"
+			data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+
+	<!-- START OPERATION NOTICE -->
+	<!-- operation success -->
+	<div id="noticeModalSuccess" align="center" class="notice"
+		ng-if="authenticated && successMessageBool">
+		<div class="notice-content notice-success" align="center">
+			<strong>Successo!</strong> <label id="successLabel">Operazione
+				completata con successo.</label>
+		</div>
+	</div>
+	<!-- Operation failed -->
+	<div id="noticeModalError" align="center" class="notice"
+		ng-if="authenticated && errorMessageBool">
+		<div id="errorLabel" class="notice-content notice-error"
+			align="center">
+			<strong>Errore!</strong> {{errorMessage}}
+		</div>
+	</div>
+	<!-- Operation error db -->
+	<div id="noticeModalErrorDB" align="center" class="notice"
+		ng-if="authenticated && errorDBMessageBool">
+		<div id="dbErrorLabel" class="notice-content notice-error"
+			align="center">
+			<strong>Errore nel Database! </strong> <span>Si è verificato
+				un errore nel database</span>
+		</div>
+	</div>
+	<!-- END OPERATION NOTICE -->
+
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="./app/jQueryScripts/jquery-3.3.1.min.js"></script>
+	<!-- dashboard -->
+	<script src="./app/jQueryScripts/jquery-ui.js"></script>
+	<!-- dashboard -->
+	<script src="./app/bootstrapScripts/bootstrap.js"></script>
+	<!-- dashboard -->
+	<script src="./app/jQueryScripts/jquery.js"></script>
+	<!-- dashboard -->
+	 <script src="./app/apps.js"></script> 
+	<!-- dashboard -->
+	<!-- ================== END BASE JS ================== -->
+
+	<!-- ================== BEGIN PROXIMA JS ================== -->
+	<script src="./app/angularjsScripts/angular-min-58.js"></script>
+	<script src="./app/angularjsScripts/angular-route.js"></script>
+	<script src="./app/angularjsScripts/angular-resource.js"></script>
+	<script src="./app/jQueryScripts/jQuery-flot.js"></script>
+ 	<script src="./app/common/env.js"></script>
+	<script src="./app/app.js"></script>
+	<script src="./statistics/statistics.js"></script>
+	<script src="./candidates/controllers/list.js"></script>
+	<script src="./candidates/services/validation.js"></script>
+	<script src="./candidates/controllers/register.js"></script>
+	<script src="./candidates/controllers/update.js"></script>
+	<script src="./loginLogout/controllers/login.js"></script>
+	<script src="./loginLogout/controllers/logout.js"></script>
+	<script src="./userRegistration/registerUserController.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+	<!-- ================== END PROXIMA JS ================== -->
+
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script> 
+
+	<div class="jvectormap-tip"></div>
+</body>
+</html>

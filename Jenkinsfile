@@ -12,7 +12,7 @@ pipeline {
         ARTIFACT_FULL_FILE_NAME = "${PACKAGE_FILE_NAME}-${VERSION}.${PACKAGING}"
         */
         PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
-        ARTIFACT_FULL_FILE_NAME = "centauri.war"
+        ARTIFACT_FULL_FILE_NAME = "repro.hr.fe.bo.war"
         /*
         DEV_TOMCAT_HOST = "eltanin"
         STAGE_TOMCAT_HOST = "ndraconis"

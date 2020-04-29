@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/notice.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
+    
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>Proxima Academy</title>
+
+<!----- BOOTSTRAP CORE CSS -------->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!----- BOOTSTRAP THEME ----------->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/3.3/examples/theme/theme.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+
+  	<link rel="stylesheet" id="coToolbarStyle" href="chrome-extension://cjabmdjcfcfdmffimndhafhblfmpjdpe/toolbar/styles/placeholder.css" type="text/css">
+
+
+<style>
+
+.loginBtn{
+	margin-top:10px;
+	margin-bottom:10px;
+	
+}
+
+
+.proximaContainer{
+width:100%;
+padding-left:5px;
+margin-top:3px;
+
+}
+
+.skillview{
+	float:right; 
+	font-family:'Montserrat', sans-serif; 
+	font-weight:bold;
+	color: black;
+	margin-top: 5px;
+	font-size: 24px;
+	text-shadow: 1px 1px 1px #aaa;
+}
+
+
+</style>
+  </head>
+
+  <body id="body">
+
+   <!------------------ NAVBAR FISSA ------------------->
+    
+    <nav class="navbar navbar-default navbar-fixed-top custom-navbar">
+      <div class="container proximaContainer">
+        <div class="navbar-header">
+        
+   <!--------- BOTTONE DELL'HAMBURGER MENU ------------->
+        
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only" id="hamburgerMenu">Toggle navigation</span>
+            <span class="icon-bar" id="iconaRiga"></span>
+            <span class="icon-bar" id="iconaRiga"></span>
+            <span class="icon-bar" id="iconaRiga"></span>
+          </button>
+          
+   <!--------- FINE BOTTONE DELL'HAMBURGER MENU --------->
+   
+        <a class="navbar-brand" href="./index.html" style="padding: 0px; margin:auto; margin-top:8px; width:250px;"> 
+        <p class=" skillview">SkillView Bo</p>
+        <img src="img/centauri.png" style=" height:70%; width: auto;" title="mycompanylogo">
+        </a>
+
+        </div>
+        
+   <!------------------ NAVBAR RESPONSIVE --------------->
+        
+        <div id="navbar" class="navbar-collapse collapse">
+        
+          <ul class="nav navbar-nav fontNavbar">
+<!--          	<li class="nav-item liste"><a class="nav-link" id="roleMenuItem" href="role.html">ruoli</a></li> -->	
+<!-- 			<li class="nav-item"><a class="nav-link" id="surveyMenuItem" href="survey.html">Survey's List</a></li> -->			
+<!-- 			<li class="nav-item"><a class="nav-link" id="surveyQuestionMenuItem"href="surveyquestion.html">SurveyQuestion's List</a></li> -->
+<!-- 			<li class="nav-item"><a class="nav-link" id="candidateMenuItem" href="candidate.html">candidati</a></li> -->			
+<!-- 			<li class="nav-item"><a class="nav-link" id="candidateMenuItem" href="candidateCustom.html">candidati(full)</a></li> -->
+<!-- 			<li class="nav-item"><a class="nav-link" id="surveyReplayMenuItem" href="surveyreply.html">SurveyReply's</a></li> -->
+<!-- 			<li class="nav-item"><a class="nav-link" id="userSurveyTokenMenuItem" href="usersurveytoken.html">UserSurveyToken's</a></li> -->
+<!-- 			<li class="nav-item"><a class="nav-link" id="userMenuItem" href="user.html">utenti</a></li> --
+<!-- 	 		<li class="nav-item"><a class="nav-link" id="questionMenuItem" href="question.html">Questions's</a></li>  -->	 	
+<!-- 	 		<li class="nav-item"><a class="nav-link" id="questionMenuItem" href="pagecourse.html">Page course List</a></li>  -->	
+<!-- 			<li class="nav-item"><a class="nav-link" id="employeeMenuItem" href="employee.html">Employee's List</a></li> -->				
+<!-- 			<li class="nav-item"><a class="nav-link" id="messageMenuItem" href="message.html">Messages's List</a></li> -->			
+<!-- 		    <li class="nav-item"><button type="button" class="btn btn-sm btn-default loginBtn">LogIn</button></li> -->
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style= "text-shadow: 1px 1px 1px #aaa;">Questionari <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="survey.html" style= "text-shadow: 1px 1px 1px #aaa;" >Questionari</a></li>
+                <li><a href="question.html" style= "text-shadow: 1px 1px 1px #aaa;">Domande</a></li>
+                <li><a href="surveyquestion.html" style= "text-shadow: 1px 1px 1px #aaa;">Associa domande a questionari</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="usersurveytoken.html" style= "text-shadow: 1px 1px 1px #aaa;">Associa questionari a utenze</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style= "text-shadow: 1px 1px 1px #aaa;">Utenze <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="role.html" style= "text-shadow: 1px 1px 1px #aaa;">Ruoli</a></li>
+                <li><a href="user.html" style= "text-shadow: 1px 1px 1px #aaa;">Utenti</a></li>
+                <li><a href="candidate.html" style= "text-shadow: 1px 1px 1px #aaa;">Candidati</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="candidateCustom.html" style= "text-shadow: 1px 1px 1px #aaa;">Candidati (Full)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" id="questionMenuItem" href="coursepage.html" style= "text-shadow: 1px 1px 1px #aaa;">CoursePage's List</a></li>          
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+   <!------------------ FINE NAVBAR --------------->
+
+
+   <!------------------ MODAL --------------------->
+	<!-- loadingModal -->
+
+		<div id="loadingModal" class="modal" style="display: none">
+			
+	<!-- Modal content -->
+			<div class="loading-modal-content" align="center">
+				<img src="img/loading.gif" alt="loading" height="50%" >
+			</div>
+		</div>
+		
+	<!-- Modal operation success -->
+		<div id="noticeModalSuccess" align="center" class="notice" style="display: none;">
+
+	<!-- Modal success content -->
+
+			<div class="notice-content notice-success" align="center">
+				<strong>Success! </strong>
+				<label id="successLabel">Operation completed with successfull.</label>
+			</div>
+		</div>
+		
+	<!-- Modal operation failed -->
+
+		<div id="noticeModalError" align="center" class="notice" style="display: none;">
+
+	<!-- Modal error content -->
+
+		<div id="errorLabel" class="notice-content notice-error" align="center"></div>
+		</div>
+	<!-- Modal operation warning -->
+
+		<div id="noticeModalWarn" align="center" class="notice" style="display: none;">
+
+	<!-- Modal warning content -->
+
+			<div id="warnLabel" class="notice-content notice-warn" align="center"></div>
+			
+		</div>
+	<!-- Modal operation error db -->
+
+		<div id="noticeModalErrorDB" align="center" class="notice" style="display: none;">
+
+	<!-- Modal error database content -->
+			
+			<div id="dbErrorLabel" class="notice-content notice-error" align="center">
+				<strong>Database Error! </strong>
+				<span>An error occurred in the database</span>
+			</div>
+			
+		</div>
+		
+	<!------------------ FINE MODAL --------------->
+
+  
+
+</body>
+
+</html>

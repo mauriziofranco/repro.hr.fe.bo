@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/modal.css">
+		<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+		
+		<script type="text/javascript">
+		
+		var resourceApi = '/centauri/api/v1/surveyquestion/';
+		var currentObj = null;
+		var tabTitle = 'List Survey Question Page';
+		var pageTitle = 'List Survey Question';
+		</script>
+		
+		
+		<script src='js/jquery-3.3.1.js'></script>
+		<script src='js/surveyquestion.js'></script>
+<!-- 		<style> #pageTitle{ -->
+<!-- /* 		font-family: "Amita"; */ -->
+<!-- /* 		} */ -->
+<!-- 		</style> -->
+	</head>
+	<body id="body" onload="refreshTable();" >
+	<div w3-include-html="menubar.html"></div>
+
+	<div id="header">
+	<br>
+		<h1 id="pageTitle" >
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	
+	<div id="tableList"></div>
+	<br><br>
+	
+	<!-- The Modal -->
+	<div id="detailModal" style="display:none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+<!-- 			<form id="surveyquestionForm"  action="" method="POST"> -->
+			  <label id="insertLabel">Inserisci una SurveyQuestion</label>
+			  <label id="editLabel">Modifica SurveyQuestion</label>
+			  <br><br>
+			   	<input type="hidden" name="id" id="idSurveyQuestion" value="">
+			  SurveyId<br>
+				  <input type="number" name="surveyId" id="surveyId" value=""><br>
+				  <label id="labelError1" class="labelError" style="display:none">SurveyId not valid!</label><br>
+			  QuestionId<br>
+				  <input type="number" name="questionId" id="questionId" value=""><br><br>
+				  <label id="labelError2" class="labelError" style="display:none">QuestionId not valid!</label><br>
+			  Position<br>
+				  <input type="number" name="position" id="position" value=""><br>
+				  <label id="labelError3" class="labelError" style="display:none">Position not valid!</label><br><br>
+				  
+				  <input type="button" id="editButton" value="Modifica dati" onclick="update();">  
+				  <input type="button" id="insertButton" value="Inserisci dati" onclick="insert();">
+				 
+			</form>
+		</div>
+	</div>
+	
+</body>
+	<script src='js/common.js'></script>
+	
+	 <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>

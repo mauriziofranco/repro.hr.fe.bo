@@ -1,0 +1,270 @@
+<div class="container">
+    <div class="panel">
+        <div class="panel-body ">
+            <div class="container">
+                
+                <!-- begin wizard-form -->
+			<form action="/" method="POST" class="form-control-with-bg">
+				<!-- begin wizard -->
+				<div id="wizard" class="sw-main sw-theme-default">
+					<!-- begin wizard-step -->
+					<ul class="nav nav-tabs step-anchor">
+						<li class="col-md-3 col-sm-4 col-6 nav-item" ng-class="{active: step==1, done: step!=1 }"	>
+							<a href="" ng-click="goToStep(1)" class="nav-link">
+								<span class="number">1</span> 
+								<span class="info text-ellipsis">
+									Informazioni personali
+									<small class="text-ellipsis">Nome, Cognome, Email</small>
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6 nav-item" ng-class="{active: step==2, done: step!=2 }">
+							<a href="" ng-click="goToStep(2)" class="nav-link">
+								<span class="number">2</span> 
+								<span class="info text-ellipsis">
+									Titolo di studio
+									<small class="text-ellipsis">Studi svolti</small>
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6 nav-item" ng-class="{active: step==3, done: step!=3 }">
+							<a href="" ng-click="goToStep(3)" class="nav-link">
+								<span class="number">3</span>
+								<span class="info text-ellipsis">
+									Allegati
+									<small class="text-ellipsis">(Immagine di profilo, CV)</small>
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6 nav-item" ng-class="{active: step==4, done: step!=4 }">
+							<a href="" ng-click="goToStep(4)" class="nav-link">
+								<span class="number">4</span> 
+								<span class="info text-ellipsis">
+									Registrazione completa
+									<small class="text-ellipsis">Finito</small>
+								</span>
+							</a>
+						</li>
+					</ul>
+					<!-- end wizard-step -->
+					<!-- begin wizard-content -->
+					<div class="sw-container tab-content" style="min-height: 280px;">
+						<!-- begin step-1 -->
+						<div id="step-1" class="step-content" ng-if="step==1">
+							<!-- begin fieldset -->
+							<fieldset>
+								<!-- begin row -->
+								<div class="row">
+									<!-- begin col-8 -->
+									<div class="col-md-12">
+										<legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Informazioni personali</legend>
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+												<label class="col-md-2 text-md-right col-form-label">Nome</label>
+												<div class="col-md-4">
+												<input type="text" name="firstname" ng-model="myForm.firstname" class="form-control" placeholder="Inserisci nome" maxlength="50"/>
+												</div>
+												<label class="col-md-2 text-md-right col-form-label">Cognome</label>
+											<div class="col-md-4">
+                                                <input type="text" name="lastname" ng-model="myForm.lastname" class="form-control" placeholder="Inserisci cognome" maxlength="50" />
+                                            </div>
+										</div>
+										<!-- end form-group row -->
+										
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-2 text-md-right col-form-label">Data di nascita</label>
+<!-- 											<div class="col-md-6"> -->
+<!-- 												<div class="row row-space-6"> -->
+<!-- 													<div class="col-4"> -->
+<!-- 														<select class="form-control" name="year"> -->
+<!-- 															<option selected="selected">-- Year --</option> -->
+<!-- 														</select> -->
+<!-- 													</div> -->
+<!-- 													<div class="col-4"> -->
+<!-- 														<select class="form-control" name="month"> -->
+<!-- 															<option selected="selected">-- Month --</option> -->
+<!-- 														</select> -->
+<!-- 													</div> -->
+<!-- 													<div class="col-4"> -->
+<!-- 														<select class="form-control" name="day"> -->
+<!-- 															<option selected="selected">-- Day --</option> -->
+<!-- 														</select> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</div> -->
+                                            <div class="col-md-4">
+                                                <input type="date" name="dateOfBirth" ng-model="myForm.dateOfBirth" class="form-control" style="padding:3px 20px 10px 10px; color:gray;"/>
+                                            </div>
+                                            <label class="col-md-2 text-md-right col-form-label">Domicilio</label>
+											<div class="col-md-4">
+                                                <input type="text" name="domicileCity" ng-model="myForm.domicileCity" maxlength="100" placeholder="Inserisci citta' di domicilio" class="form-control"/>
+                                            </div>
+										</div>
+										<!-- end form-group row -->
+										
+										
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-2 text-md-right col-form-label">Cellulare</label>
+											<div class="col-md-4">
+												<input type="text" name="mobile" ng-model="myForm.mobile" ng-value="mobile" placeholder="Inserisci un numero valido di cellulare" maxlength="20" class="form-control" type="number">
+											</div>
+											<label class="col-md-2 text-md-right col-form-label">Email</label>
+											<div class="col-md-4">
+												<input type="email" name="email" ng-model="myForm.email" placeholder="Inserisci email" maxlength="100" class="form-control">
+											</div>
+										</div>
+										<!-- end form-group row -->
+									</div>
+									<!-- end col-8 -->
+								</div>
+								<!-- end row -->
+							</fieldset>
+							<!-- end fieldset -->
+						</div>
+						<!-- end step-1 -->
+						<!-- begin step-2 -->
+						<div id="step-2" class="step-content" ng-if="step==2">
+							<!-- begin fieldset -->
+							<fieldset>
+								<!-- begin row -->
+								<div class="row">
+									<!-- begin col-8 -->
+									<div class="col-md-8 offset-md-2">
+										<legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Informazioni sui tuoi studi</legend>
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Titolo di studio</label>
+											<div class="col-md-6">
+											    <input type="text" name="studyQualification" ng-model="myForm.studyQualification" class="form-control" placeholder="Inserisci titolo di studio"
+                                        maxlength="300" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Laurea</label>
+											<div class="col-md-6">
+                                    			<input type="checkbox" id="myForm.graduate" ng-model="myForm.graduate" name="graduate" ng-init="myForm.graduate=false" ng-checked="myForm.graduate"
+                                    />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Laurea Magistrale</label>
+											<div class="col-md-6">
+                                    			<input type="checkbox" id="myForm.highGraduate" ng-model="myForm.highGraduate" name="highGraduate" ng-init="myForm.highGraduate=false"
+                                        ng-checked="myForm.highGraduate" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Laurea/Laurea Magistrale in corso</label>
+											<div class="col-md-6">
+                                    <input type="checkbox" id="myForm.stillHighStudy" ng-model="myForm.stillHighStudy" name="still_high_study" ng-init="myForm.stillHighStudy=false"
+                                        ng-checked="myForm.stillHighStudy" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+									</div>
+									<!-- end col-8 -->
+								</div>
+								<!-- end row -->
+							</fieldset>
+							<!-- end fieldset -->
+						</div>
+						<!-- end step-2 -->
+						<!-- begin step-3 -->
+						<div id="step-3" class="step-content" ng-if="step==3">
+							<!-- begin fieldset -->
+							<fieldset>
+								<!-- begin row -->
+								<div class="row">
+									<!-- begin col-8 -->
+									<div class="col-md-8 offset-md-2">
+										<legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Curriculum Vitae e Immagine di profilo</legend>
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Curriculum Vitae
+			                                    <img src="/centauri/common/img/info.png" width="25" height="25" border="6" title="Formati: .docx, .pdf, .doc Dimesione massima: 5MB"
+			                                        data-toggle="tooltip"> </label>
+														<div class="col-md-6">
+															
+			<!--                                 <div class="col-md-7"> -->
+			                                    <input type="file" file-model="myForm.files[1]" accept=".docx, .pdf, .doc" />
+<!--                                 </div> -->
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Immagine di profilo
+                                    <img src="/centauri/common/img/info.png" width="25" height="25" border="6" title="Formati: .jpg, .jpeg, .png Dimesione massima: 5MB"
+                                        data-toggle="tooltip"></label>
+											<div class="col-md-6">
+												
+                                    <input type="file" file-model="myForm.files[0]" accept=".jpg, .jpeg, .png" onchange="loadFile(event)"  />
+                                    <img id="imagePreview" width="60" height="60" border="0" />
+
+                               
+                            
+                            <script>
+                                var loadFile = function (event) {
+                                    var output = document.getElementById('imagePreview');
+                                    output.src = URL
+                                        .createObjectURL(event.target.files[0]);
+                                    console.log("output.src : " + output.src);
+                                };
+                            </script>
+											</div>
+										</div>
+										<!-- end form-group row -->
+										
+									</div>
+									<!-- end col-8 -->
+								</div>
+								<!-- end row -->
+							</fieldset>
+							<!-- end fieldset -->
+						</div>
+						<!-- end step-3 -->
+						<!-- begin step-4 -->
+						<div id="step-4" class="step-content" ng-if="step==4">
+							<div class="jumbotron m-b-0 text-center">
+								<h2 class="text-inverse">Registrazione terminata</h2>
+								<p class="m-b-30 f-s-16">Ti ringraziamo per aver inserito le informazioni richieste.
+Cliccando sul bottone qui in basso, potrai terminare la tua registrazione e inviare la candidatura per il corso. </p>
+								<p><a href="javascript:;" ng-click="submitUserForm()" class="btn btn-danger btn-lg" style="background-color:red;">PROCEDI</a></p>
+<!-- 								<p><input type="submit" ng-click="submitUserForm()" value="Inserisci"></p> -->
+							</div>
+						</div>
+						<!-- end step-4 -->
+<!-- 						ERROR ALERT | START -->
+						<div id="noticeModalError" align="center" class="notice" ng-if="errorMessageBool">
+                                <div id="errorLabel" align="center">
+                                    <strong>Errore!</strong>
+                                    {{errorMessage}}
+                                </div>
+                            </div>
+<!-- 						ERROR ALERT | END -->                            
+                            
+					</div>
+					<div class="btn-toolbar sw-toolbar sw-toolbar-bottom justify-content-end">
+					    <div class="btn-group mr-2 sw-btn-group" role="group">
+					        <button class="btn btn-secondary sw-btn-prev" type="button" ng-click="previousStep()" ng-if="step>1">Indietro</button>
+					        <button class="btn btn-secondary sw-btn-next" type="button" ng-click="nextStep()" ng-if="step>0&&step<4">Avanti</button>
+					    </div>
+					</div>
+					<!-- end wizard-content -->
+				</div>
+				<!-- end wizard -->
+			</form>
+			<!-- end wizard-form -->
+                
+            </div>
+        </div>
+    </div>
+</div>

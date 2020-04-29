@@ -1,0 +1,56 @@
+	<div id="container">
+		<div class="panel panel-default ">
+			<div>
+				<div class="container-fluid">
+				<div class="alert alert-success">
+			<span class="lead">Login User</span>
+		</div>
+					<div class="chatdiv">
+
+						<form ng-submit="loginUser()" name="myForm"
+							class="form-horizontal">
+							<label>EMAIL:</label>
+							<div class="input-group">
+
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="email"
+									name="email" ng-model="credentials.username" id="uname"
+									class="form-control" placeholder="Enter Email" required />
+							</div>
+							<!-- 						<div class="row"> -->
+							<!-- 							<div class="form-group col-md-12"> -->
+							<!-- 								<label class="col-md-2 control-lable" for="password"> -->
+							<!-- 									Password </label> -->
+							<!-- 								<div class="col-md-7"> -->
+							<!-- 									<input type="password" ng-model="credentials.password" -->
+							<!-- 										id="password" class="form-control input-sm" -->
+							<!-- 										placeholder="Enter Password" /> -->
+							<!-- 								</div> -->
+							<!-- 							</div> -->
+							<!-- 						</div> -->
+							<label>PASSWORD:</label><br>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-lock"></i></span> <input type="password"
+									name="password" ng-model="credentials.password" id="password"
+									placeholder="Enter Password" class="form-control" required />
+							</div>
+<!-- 							<div class="input-group"> -->
+<!-- 								<div class="form-actions floatRight"> -->
+									<input type="submit" value="Login"
+										class="btn btn-primary btn-sm greenbut">
+									<button type="button" ng-click="resetForm()"
+										class="btn btn-warning btn-sm greenbut">Reset Form</button>
+<!-- 								</div> -->
+<!-- 							</div> -->
+						</form>
+						<span class="psw boxwithoutborder">Not a member? <a
+							href="#/register-new-user">Register</a></span>
+					</div>
+					<div class="alert alert-danger" ng-show="loginerror">There
+						was a problem logging in. Please try again.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- </div> -->

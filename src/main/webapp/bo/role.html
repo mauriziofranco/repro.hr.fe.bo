@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+<script src="../common/js/env/env.js"></script>
+<script type="text/javascript">
+	var resourceApi = MAIN_BACKEND_LOCATION + '/api/v1/role/';
+
+	var label = 'label';
+	var description = 'description';
+	var level = 'level';
+	var tabTitle = 'List Role Page';
+	var pageTitle = 'List Role';
+</script>
+
+<script src='js/jquery-3.3.1.js'></script>
+<script src='js/role.js'></script>
+</head>
+<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html"></div>
+	
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""	onclick="openDetailDialogInsert();">
+	</div>
+	
+	<div id="tableList"></div>
+
+	<!-- The Modal -->
+	<div id="detailModal" style="display: none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			
+			<label id="insertLabel">role.insert.label</label> 
+			<label id="editLabel">role.modifica.label</label> 
+			<br> <br>
+			
+			<!-- Label -->
+			<label>Label</label>
+			<br> 
+			<input type="text" name="label"	id="label" value="">
+			<br> 
+			<label id="labelError"	style="display: none">Label not valid!</label>
+			<br>
+			
+			<!--  Description -->
+			<label>Description</label>
+			<br> 
+			<input type="text" name="description" id="description" value="">
+			<br> <br>
+			
+			<!-- 	Level -->
+			<label>Level</label>
+			<br> 
+			<input type="number" name="level" id="level" value="">
+			<br> 
+			<label id="levelError" style="display: none">Level not valid!</label>
+			<br> 
+			<input type="button" id="editButton" value="Modifica dati"	onclick="update();">
+			<input type="button" id="insertButton"	value="Inserisci dati" onclick="insert();"> 
+			<input type="hidden" name="id" id="idRole" value="">
+		</div>
+	</div>
+
+
+</body>
+<script src='js/common.js'></script>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

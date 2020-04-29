@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+
+<script type="text/javascript">
+	var resourceApi = '/centauri/api/v1/surveyreply/';
+
+	/* ###### Oggetti JSON ######*/
+	var currentObj = null;
+	var tabTitle = 'List Survey Reply Page';
+	var pageTitle = 'List Survey Reply';
+</script>
+<script src='js/jquery-3.3.1.js'></script>
+<script src='js/surveyreply.js'></script>
+</head>
+<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html"></div>
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+
+	<!-- The Modal -->
+	<div id="detailModal" style="display: none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			<label id="insertLabel"> surveyreply.message.insert </label> <label
+				id="editLabel"> surveyreply.message.modify </label> <br>
+			<br> surveyreply.table.usid <br> <input type="number"
+				name="userId" id="userId" min="1" value=""> <br> <label
+				id="UserIdError" style="display: none">
+				surveyreply.message.error.general </label><br> surveyreply.table.survid
+			<br> <input type="number" name="surveyId" id="surveyId"
+				min="1" value=""><br> <label id="SurveyIdError"
+				style="display: none"> surveyreply.message.error.general </label> <br>
+			surveyreply.table.startt <br> <input type="datetime-local"
+				name="starttime" id="starttime"> <br>
+			surveyreply.table.endt <br> <br> <input
+				type="datetime-local" name="endtime" id="endtime"> <br>
+			<br> surveyreply.table.ans <br> <input type="text"
+				name="answers" id="answers"> <br>
+			<br> surveyreply.table.pdfname <br> <input type="text"
+				name="pdffilename" id="pdffilename"> <br>
+			<br> surveyreply.table.poin <br> <input type="text"
+				name="points" id="points"><br>
+			<br> <input type="button" id="editButton" value="Modifica dati"
+				onclick="update();"> <input type="button" id="insertButton"
+				value="Inserisci dati" onclick="insert();"> <input
+				type="hidden" name="id" id="idSurvRep" value="">
+		</div>
+
+		<!-- loadingModal -->
+
+		<div id="loadingModal" class="modal" style="display: none">
+			<!-- Modal content -->
+			<div class="loading-modal-content" align="center">
+				<img src="img/loading.gif" alt="loading" height="50%">
+			</div>
+
+		</div>
+</body>
+<script src='js/common.js'></script>
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

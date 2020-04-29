@@ -1,0 +1,116 @@
+<div class="container">
+	<div class="panel" >
+
+		<div class="panel-heading">
+			<h1 class="panel-title">
+				Lista candidati
+				<!-- div aggiorna pagina -->
+				<div class="control-table" align="right">
+					<a href="#/insert-new-candidate/{{courseCode}}" class="btn-control btn-control-new" role="button"></a>
+				</div>
+			</h1>
+		</div>
+
+		<div class="panel-body">
+			<div id="data-table-default_wrapper"
+				class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="dataTables_length" id="data-table-default_length">
+							<label>Visualizza <select id="mySelect"   ng-options="option.value for option in data.availableOptions track by option.id"
+      								ng-model="data.selectedOption" ng-change="getCandidates()" name="data-table-default_length" aria-controls="data-table-default" class="form-control input-sm">
+<!-- 								<option value="10">10</option> -->
+<!-- 								<option value="25">25</option> -->
+<!-- 								<option value="50">50</option> -->
+<!-- 								<option value="100">100</option> -->
+								</select> candidati
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div id="data-table-default_filter" class="dataTables_filter">
+							<label>Cerca: <input type="search" ng-model="search"
+								class="form-control input-sm" placeholder=""
+								aria-controls="data-table-default"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="table-responsive">
+						<table id="data-table-default"
+							class="table table-striped table-bordered dataTable no-footer dtr-inline"
+							role="grid" aria-describedby="data-table-default_info"
+							style="width: 1040px;">
+							<thead>
+								<tr role="row">
+<!-- 									<th>#</th> -->
+<!-- 									<th>Status Color</th> -->
+									<th>&nbsp;</th>
+									<th></th>
+
+<!-- 									<th>Candidate States</th> -->
+									<th>Email</th>
+									<th>Nome</th>
+									<th>Cognome</th>
+
+									<th>CV</th>
+
+									<th width="100"></th>
+									<th width="100"></th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr ng-repeat="current in list | filter:search"
+									class="gradeX odd" role="row">
+<!-- 									<td>{{current.candidateStatusColor}}</td> -->
+									<td style="height: 5%; width: 5%; background-color: {{current.candidateStatusColor}}"></td>
+<!-- 									<td><div style="height: 10px; width: 100px; background-color: {{current.candidateStatusColor}}"></div></td> -->
+<!-- 								<td class="f-s-600 text-inverse sorting_1" tabindex="0" -->
+<!-- 										width="1%">1</td> -->
+									<td><img id='imgUser' src='{{imgFullPath + current.imgpath}}'
+										alt='' height='42' width='42'></td>
+
+<!-- 									<td>{{current.candidateStatesId}}</td> -->
+									<td>{{current.email}}</td>
+									<td>{{current.firstname}}</td>
+									<td>{{current.lastname}}</td>
+
+<!-- 									<td>{{current.cvExternalPath}}</td> -->
+
+								<td><a href="{{cvFullPath + current.cvExternalPath}}" ng-if="current.cvExternalPath != null" target="_blank" download>
+						 				<i class="fa fa-download" ></i>
+						 				</a>
+									</td>
+									<td>
+										<button type="button"
+											ng-click="editCandidateCustom(current.id)"
+											class="btn btn-primary custom-width">
+											<span class="glyphicon glyphicon-edit"> </span> Modifica
+										</button>
+
+									</td>
+									<td>
+										<button type="button"
+											ng-click="deleteCandidateCustom(current.id)"
+											class="btn btn-danger custom-width">
+											<span class="glyphicon glyphicon-remove"> </span> Cancella
+										</button>
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+				<button ng-if="currentPage > 1" ng-click="prevPage()" class="btn btn-secondary sw-btn-prev">
+			        Indietro
+			    </button>
+			    {{currentPage}}/{{totalPages}}
+			    <button ng-if="currentPage < totalPages" ng-click="nextPage()" class="btn btn-secondary sw-btn-next">
+			        Avanti
+			    </button>
+			</div>
+		</div>
+
+	</div>
+</div>

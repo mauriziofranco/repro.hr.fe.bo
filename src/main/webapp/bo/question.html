@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+	<script type="text/javascript">
+	
+		var resourceApi = '/centauri/api/v1/question/';
+		var tabTitle = 'List Question Page';
+		var pageTitle = 'List Question';
+	</script>
+	<script src='js/jquery-3.3.1.js'></script>
+	<script src='js/question.js'></script>
+</head>
+<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html"></div>
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+	
+	<!-- The Modal -->
+	<div id="detailModal" style="display:none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+		<form>
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			<label id="insertLabel">Insert new question</label>
+			<label id="editLabel">Update question</label>
+			<br><br>
+			Label<br>
+				<input type="text" name="label" id="label" value=""><br>
+				<label id="labelError" style="display:none">question.error.label</label><br>
+			Description<br>
+				<input type="text" name="description" id="description" value=""><br><br>
+			Answer A<br>
+				<input type="text" name="ansa" id="ansa" value=""><br>
+			Solution
+				<input type="radio" name="cansa" id="cansa1" value="true"> True
+				<input type="radio" name="cansa" id="cansa2" value="false"> False<br>
+			<label id="ansaError" style="display:none">question.error.ans</label>
+			<label id="cansaError" style="display:none">question.error.cans</label><br>
+			Answer B<br>
+				<input type="text" name="ansb" id="ansb" value=""><br>
+			Solution
+				<input type="radio" name="cansb" id="cansb1" value="true"> True
+				<input type="radio" name="cansb" id="cansb2" value="false"> False<br>
+			<label id="ansbError" style="display:none">question.error.ans</label>
+			<label id="cansbError" style="display:none">question.error.cans</label><br>
+			Answer C<br>
+				<input type="text" name="ansc" id="ansc" value=""><br>
+			Solution
+				<input type="radio" name="cansc" id="cansc1" value="true"> True
+				<input type="radio" name="cansc" id="cansc2" value="false"> False<br>
+			<label id="anscError" style="display:none">question.error.ans</label>
+			<label id="canscError" style="display:none">question.error.cans</label><br>
+			Answer D<br>
+				<input type="text" name="ansd" id="ansd" value=""><br>
+			Solution
+				<input type="radio" name="cansd" id="cansd1" value="true"> True
+				<input type="radio" name="cansd" id="cansd2" value="false"> False<br>
+			<label id="ansdError" style="display:none">question.error.ans</label>
+			<label id="cansdError" style="display:none">question.error.cans</label><br>
+			Answer E<br>
+				<input type="text" name="anse" id="anse" value=""><br>
+			Solution
+				<input type="radio" name="canse" id="canse1" value="true"> True
+				<input type="radio" name="canse" id="canse2" value="false"> False<br>
+			<label id="anseError" style="display:none">question.error.ans</label>
+			<label id="canseError" style="display:none">question.error.cans</label><br>
+			Answer F<br>
+				<input type="text" name="ansf" id="ansf" value=""><br>
+			Solution
+				<input type="radio" name="cansf" id="cansf1" value="true"> True
+				<input type="radio" name="cansf" id="cansf2" value="false"> False<br>
+			<label id="ansfError" style="display:none">question.error.ans</label>
+			<label id="cansfError" style="display:none">question.error.cans</label><br>
+			Answer G<br>
+				<input type="text" name="ansg" id="ansg" value=""><br>
+			Solution
+				<input type="radio" name="cansg" id="cansg1" value="true"> True
+				<input type="radio" name="cansg" id="cansg2" value="false"> False<br>
+			<label id="ansgError" style="display:none">question.error.ans</label>
+			<label id="cansgError" style="display:none">question.error.cans</label><br>
+			Answer H<br>
+				<input type="text" name="ansh" id="ansh" value=""><br>
+			Solution
+				<input type="radio" name="cansh" id="cansh1" value="true"> True
+				<input type="radio" name="cansh" id="cansh2" value="false"> False<br>
+			<label id="anshError" style="display:none">question.error.ans</label>
+			<label id="canshError" style="display:none">question.error.cans</label><br>
+			Full Answer<br>
+				<input type="text" name="fullAnswer" id="fullAnswer" value=""><br>
+			<br><br>
+			<input type="button" id="editButton" value="Modifica dati" onclick="update();">  
+			<input type="button" id="insertButton" value="Inserisci dati" onclick="insert();">
+			<input type="hidden" name="id" id="idQuestion" value="">
+		
+		</form>
+		</div>
+	</div>
+</body>
+<script src='js/common.js'></script>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

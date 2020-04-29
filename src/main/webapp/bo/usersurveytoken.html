@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/modal.css">
+		<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+		
+		<script type="text/javascript">
+		
+		var resourceApi = '/centauri/api/v1/usersurveytoken/';
+		var currentObj = null;
+		var tabTitle = 'List User Survey Token Page';
+		var pageTitle = 'List User Survey Token';
+		</script>
+		<script src='js/jquery-3.3.1.js'></script>
+		<script src='js/usersurveytoken.js'></script>
+	</head>
+	<body  id="body" onload="refreshTable();">
+	<div w3-include-html="menubar.html"></div>
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+	<br><br>
+	
+	<!-- The Modal -->
+	<div id="detailModal" style="display:none">
+
+		<!-- Modal content -->
+	<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			<form id="usersurveytokenForm" method="POST">
+			  <label id="insertLabel">Inserisci nuova riga</label>
+			  <label id="editLabel">Modifica riga</label>
+			  <br><br>
+			  Select User<br>
+			  		  <select id="userId"> </select><br><br>
+				 
+			  SurveyId<br>
+			    <select id="surveyid"> </select><br><br>
+<!-- 				  <input type="number" id="surveyid" value=""><br><br> -->
+<!-- 				  <label id="surveyIdError" style="display:none">SurveyId not valid!</label> -->
+			  GeneratedToken<br>
+				  <input type="text" name="generatedtoken" id="generatedtoken" value=""><br>
+				  <label id="generatedTokenError" style="display:none">GeneratedToken not valid!</label><br>
+			  ExpirationDate<br>
+				  <input type="date" name="expirationdate" id="expirationdate" value=""><br>
+				  <label id="expirationDateError" style="display:none">Level not valid!</label><br><br>
+				  
+				  <input type="button" id="editButton" value="Modifica dati" onclick="update();">  
+				   <input type="button" id="insertButton" value="Inserisci dati" onclick="insert();">
+				  <input type="hidden" name="id" id="idUserSurveyToken" value="">
+			</form>
+		</div>
+	</div>
+</body>
+<script src='js/common.js'></script>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../z/app/img/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../z/app/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../z/app/css/main-login.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+<!-- 	<div class="container-contact100"> -->
+		<div class="wrap-contact100">
+			<div id="noticeModalError" class="notice" ng-show="loginerror" style="display: inline-block">There was a problem logging in. Please try again.</div>
+			<form class="contact100-form validate-form" ng-submit="loginUser()" name="myForm">
+				<span class="contact100-form-title">
+					Login User 
+				</span>
+
+				<div class="wrap-input100 validate-input">
+					<label class="label-input100" for="email">Email Address</label>
+					<input id="email" ng-model="credentials.username" class="input100" type="text" name="email" placeholder="Enter your email...">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input">
+					<label class="label-input100" for="email">Password</label>
+					<input id="password" ng-model="credentials.password" class="input100" type="password" name="email" placeholder="Enter your password...">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<input type="submit" value="Login" class="contact100-form-btn">
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<div class="container-contact50-form-btn">
+						<a class="contact50-form-btn" href="#/register-new-user">Are you not registered yet?</a>
+					</div>
+				
+					<div class="container-contact50-form-btn">
+						<button class="contact50-form-btn" style="background-color: blue" ng-click="resetForm()">Reset</button>
+					</div>
+				</div>	
+
+			</form>
+			
+<!-- 			<div class="contact100-more flex-col-c-m" style="background-image: url('../z/app/img/images/centauri.jpg');"> -->
+			</div>
+<!-- 		</div> -->
+
+
+
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/bootstrap/js/popper.js"></script>
+	<script src="../z/app/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/select2/select2.min.js"></script>
+	<script>
+	$('.input100').each(function(){
+        $(this).on('blur', function(){
+            if((this) == undefined || (this) == null || (this) == ""){
+            	$(this).parent().addClass('true-validate');
+            }
+            else {
+            }
+        })    
+    })
+	</script>
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../z/app/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../z/app/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<!--<script src="../js/main.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+</html>

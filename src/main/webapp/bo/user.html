@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+	
+	<script type="text/javascript">
+			var resourceApi = '/centauri/api/v1/user/';
+			var tabTitle = 'List User Page';
+			var pageTitle = 'List User';
+	</script>
+
+	<script src='js/jquery-3.3.1.js'></script>
+	<script src='js/user.js'></script>
+	</head>
+<body  id="body" onload="refreshTable();retrieveRolesForRoleSelection();">
+	<div w3-include-html="menubar.html" ></div>
+
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value=""
+			onclick="openDetailDialogInsert();">
+	</div>
+	<div id="tableList"></div>
+	
+	
+	<!-- The Modal -->
+	<div id="detailModal" style="display: none">
+
+		<!-- Modal content -->
+		<div id="modalContent" align="center">
+			<span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+
+			<label id="insertLabel">Insert new User</label> 
+			<label id="editLabel">Edit User</label> <br> <br>
+			
+			<label>Firstname</label><br> 
+			<input type="text" name="firstname" id="firstname" value=""><br>
+			<label id="firstnameError" style="display: none">Firstname not valid!</label><br>
+			
+			<label>Lastname</label>
+			<br> 
+			<input type="text" name="lastname" id="lastname" value=""><br>
+			<label id="lastnameError" style="display: none">Lastname not valid!</label><br> 
+			
+			<label>Email Address</label>
+			<br> 
+			<input type="email" name="email" id="email" value=""><br> 
+			<label id="emailError" style="display: none">Email Address not valid!</label><br>
+			
+			<label>Password</label>
+			<br>
+			<input type="password" name="password" id="password" value=""   ><br> <br>
+			
+			<label>Confirm Password</label>
+			<br>
+			<input type="password" name="confirm_password" id="confirm_password" value="" onkeyup='check();' > <br>
+			<span id='message'></span>
+			<br> <br>
+		
+		
+			<label>Date Of Birth</label>
+			<br> 
+			<input type="date" name="dateofbirth" id="dateofbirth" value=""><br><br>   
+			 
+	 		
+			<label>Role</label>
+			<br> 
+			<select id="role" > </select> 
+			<br> <br>
+			 
+			<label id="path" >Path Img</label>
+			<br>
+ 
+<!-- 		 <input type="text" name="imgpath" id="imgpath" value=""> -->
+ 
+
+			<input type="file" name="imgpath" id="imgpath" accept=".jpg, .jpeg, .png" onchange="loadFile(event)">
+			<input type="hidden" name="imgpathImg" id="imgpathImg">
+			 <img 	id="output" width="60" height="60" border="0"/>
+			<script>
+				var loadFile = function(event) {
+					var output = document.getElementById('output');  
+					output.src = URL.createObjectURL(event.target.files[0]);
+					console.log("output.src : "+ output.src);
+				};
+			</script>
+			<br>
+			<br>
+			
+			<button id="editButton"  onclick="update();" >Edit</button>
+			<button id="insertButton" onclick="insert();">Insert</button>
+			
+			<input type="hidden" name="id" id="idUser"	value="">
+
+		</div>
+	</div>
+	
+	 
+	
+</body>
+<script src='js/common.js'></script>
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+</html>

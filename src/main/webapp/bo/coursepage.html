@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/coursepage.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="icon" href="img/centaurifav.png" sizes="16x16" type="image/png">
+		
+		<script type="text/javascript">
+		var resourceApi ='/centauri/api/v1/coursepage/';
+		var title = 'title';
+ 		var body_text = 'body_text';
+ 		var tabTitle = 'List CoursePage';
+ 		var pageTitle = ' Editor pagine e corsi';
+		</script>
+
+		<script src='js/jquery-3.3.1.js'> </script>
+		<script src='js/coursepage.js'> </script>
+		
+	</head>
+	
+	
+<body  id="body" onload="refreshTable();">
+	
+	<div w3-include-html="menubar.html"></div>
+	
+	<div id="header">
+	<br>
+		<h1>
+			<script>
+				document.write(pageTitle);
+			</script>
+		</h1>
+		<br>
+		<br>
+		<br>
+		<input type="button" id="myBtnInsert" value="" onclick="openDetailDialogInsert();">
+	</div>
+	
+	<div id="tableList"></div>
+	
+	
+	
+	
+	<!-- The Modal -->
+	
+	<div id="detailModal" class="modal" style="display:none">
+
+<!-- 	<div id="detailModal" style="display: none"> --> 
+
+
+
+		<!-- Modal content -->
+			  <div id="modalContent" align="center">
+			  <span class="close" id="closeButton" onclick="closeDetailDialog();">&times;</span>
+			  <label id="editLabel">Modifica titolo </label>
+			  <label id="insertLabel">Inserisci titolo</label> 
+			
+			  <br><br>
+			  
+<!-- 			  Modal content -->
+		
+			
+			  
+ 			 <!--   Title Name	-->		  
+ 			  <label> Title Name</label><br>
+			  <input type="text" name="title" id="title" value=""><br>
+			  <label id="titleError" style="display:none">Title not valid </label><br>
+			  
+				<label> Code</label><br>
+			  <input type="text" name="code" id="code" value=""><br>
+			  
+			  <!--  Body Text <br> -->
+			  
+			  <label>HTML</label><br>
+<!-- 			  <input type="text" name="body_text" id="body_text" value=""><br> -->
+			  <textarea name="body_text" id="body_text" rows="4" cols="50" >  </textarea>
+			  <label id="body_textError" style="display:none"> Text not valid </label><br>
+			  
+			  <input type="button" id="editButton" value="Modifica dati" onclick="update();"> 
+			  <input type="button" id="insertButton" value="Inserisci dati" onclick="insert();">
+			  
+			  <input type="hidden" name="id" id="idCoursePage" value="">
+
+		</div>
+	</div>
+</body>
+<script src='js/common.js'></script>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+</html>

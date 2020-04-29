@@ -1,0 +1,226 @@
+@charset "ISO-8859-1";
+@import	url(https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js);
+@import url(https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js);
+@import url('https://fonts.googleapis.com/css?family=Cantarell');
+
+#body {
+	font-family: 'Cantarell', sans-serif !important;
+}
+
+/* --- MAIN .CSS --- */
+
+.mainEmail {
+	color: white;
+	size:15px;
+	padding: 5px;
+}
+
+.mainbg{
+	background-color: initial;
+}
+
+.addButton {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 10px;
+    border: 1px solid #074276;
+    border-radius: 8px;
+    background: #0d7dde;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0d7dde), to(#074276));
+    background: -moz-linear-gradient(top, #0d7dde, #074276);
+    background: linear-gradient(to bottom, #0d7dde, #074276);
+    text-shadow: #042746 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.addButton:hover,
+.addButton:focus {
+    border: 1px solid ##084e8b;
+    background: #1096ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1096ff), to(#084f8e));
+    background: -moz-linear-gradient(top, #1096ff, #084f8e);
+    background: linear-gradient(to bottom, #1096ff, #084f8e);
+    color: #ffffff;
+    text-decoration: none;
+}
+.addButton:active {
+    background: #074276;
+    background: -webkit-gradient(linear, left top, left bottom, from(#074276), to(#074276));
+    background: -moz-linear-gradient(top, #074276, #074276);
+    background: linear-gradient(to bottom, #074276, #074276);
+}
+.addButton:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: -1px;
+    left: 4px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACWElEQVRIiZWUu04bQRSGv392LZBYMJGcFLwAkeMyaenyCumReIY8RKqUpKJPnS5FKKI06RBymrShsJCsVQCBsH1SzGVnjRecM1rNv3M5l/+cOdo/Pn0NnAgbIjkzQ4BBmsmwACSwsLMKi4WZxmCHJXAiMQpXkZQUYv4OS9iycx3YIUaCEwcM0y5g0ZvM+2XcvbOMNXQIZ4ApbEtYPBrWcuyh1sWuJHDesssTIpCth8s2sYQkBU5z3g1cwAss4/1x7FIFhOAUtREj83j0vOLs6ICzowOGO72Uq+b8auxoqYmfaNY97m/0KASFYOu2Zn5Vg4GZQnmuxmXkpl1qq/MhNX+z6QSAYrsfCM9uZNilGw/CtKXYHspsOmH+t36UrjKnKPOV0aCiv9FLK68GVVI02hu0nvj1Zo9f9QxDPnojYe0ff7M8dDPDSZwdHVAoe6VmnXhuxvDjF1y1g5LDhhAuV77M8//gFl1GMlSab06NGJjEu88/2Lqt0/Job8D7t28A+PD1J+cXl2mvvrnDFoulxHtdJVKTHCmEBuP6nvnVfbrkm5335Pziku+//0ROfdmFTpobkUSZnI9dNJvLajeF3yk5xRldAEXVX01RKoU8XLU7Lba6dKNEI50U5VaLqs/1Zo95UFrf3LWbVAeeTSfo5afTblfyp2wwv66ZTSftSJ6QJynKxVU7FDGRaxpZi6JcisrnpKmuboqQcIKF19euoi4RotzepXz2gvxeF3ZmjI1smIX21jHk56LqN0bMVn8wdmCHgnOMhTJy9MiIkSYj8aFFz/03Bh3+A2LeaCA9aAttAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+#updateButton {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	padding: 9px 9px;
+	border: 1px solid #45a739;
+	border-radius: 8px;
+	background: #72ff5e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#72ff5e),
+		to(#45a739));
+	background: -moz-linear-gradient(top, #72ff5e, #45a739);
+	background: linear-gradient(to bottom, #72ff5e, #45a739);
+	text-shadow: #327829 1px 1px 1px;
+	font: normal normal bold 20px arial;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.updateButton {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	padding: 9px 9px;
+	border: 1px solid #45a739;
+	border-radius: 8px;
+	background: #72ff5e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#72ff5e),
+		to(#45a739));
+	background: -moz-linear-gradient(top, #72ff5e, #45a739);
+	background: linear-gradient(to bottom, #72ff5e, #45a739);
+	text-shadow: #327829 1px 1px 1px;
+	font: normal normal bold 20px arial;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#updateButton:before {
+	content: "\0000a0";
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	margin: 0 4px -6px -4px;
+	position: relative;
+	top: 0px;
+	left: 4px;
+	background:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABuUlEQVRIia3Vv0vjUADA8W+aXtVTy+EvTq0H/kKph2DVxeEG/wFBcBLcnFx0uc0O4nKcizrd5uAkgoiDN7jo5iK6KCguxTs3T2PTmKTJuyFtafzZ5vngEciDzze/yFOEEEiP7aEklgsTRwuPlxTpwNagwBJg5ub0sVK8HJLCNxMC3YW+IW8aDix99V1x8MBGQpBxIZ4AzQY9C32DYAiYjxciwQIbCcGD64EZx7tyPQu6A/EB79yPgSRAWAo3HDBdeBBgCbBzs6HKO0+5L7kUPHXqHZMnCpTziALgpQcC4qUFJPC3A5L464F3wOGFr+jP6qyo7Y4RbTyTwp+9gzxe09UijT8J3Pya3M/jihrCqRuVwn0BbW088iHWO5LHXcPC1nQ0tT8w7gtEovWz1T2d4WLcuk1j/UtzfdMcCPcFKto6Zp7D7Tsdx7C4qvxWNl4IXK5P9aaMj19ewgFicytl45D7m57/NZez9ynM5jSfKyM+XEHQOrcaCC8Efh9fj0ardYxYE911UVpVOxvJ3B6prrnz6fvmYlC8ENg7vAiPDbdrFZp1EHLUn00LuwcyaPGQ3/TfGHKbfgnjPxKRiLEU9EnXAAAAAElFTkSuQmCC")
+		no-repeat left center transparent;
+	background-size: 100% 100%;
+}
+
+.deleteButton {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	padding: 9px 9px;
+	border: 1px solid #be120a;
+	border-radius: 8px;
+	background: #ff2213;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ff2213),
+		to(#be120a));
+	background: -moz-linear-gradient(top, #ff2213, #be120a);
+	background: linear-gradient(to bottom, #ff2213, #be120a);
+	text-shadow: #700b06 1px 1px 1px;
+	font: normal normal bold 20px arial;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.deleteButton:before {
+	content: "\0000a0";
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	margin: 0 4px -6px -4px;
+	position: relative;
+	top: -1px;
+	left: 4px;
+	background:	url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEHUlEQVRIibWUzW8bVRTFf+9jZhwnjhPXauIqbaMGmqIWWqq2O0RVukNiURSVsgbBP8CG/wGJNetKbalA7NjBohQoiKZKUxNaoB84ThoS22M79sx43gwL262TuIo3XOlJT3fePeeec98b+J9DDHpw7uIFO4YjnYL716997Q1SpwYDf3dk9vCRy5cuvv/57Ozsx5VK+dWpqalv8/fy/m61fRWcPXuWvZPZYzOHDp0fz2TeSKVGT55/6/z05ESOer3Kvd/vcuvWr397nvfL6urqzUql8t31a1/lByL48KMPJo8fP/7Z6VOn3slmsyNCCJRWrP+7wQ83bxC2Wpw+fYZGc5OYCGJBsVisLy4ufrNSXP3k6pUvV19o0dzcnDx37tzV9y5eupBOp20hwBgDkWBhcQHf9whNSL1eY3b2FSrlMtpSpMfG7JmZmdeq1dqxyYnclXw+H3cx9Zb2lckmk0NnHNtBSoEQAtuyaXpNjh49Sr1ew/c9TGRY31jDSdi0kWKkFKTToydjabLAWn+CmMh13Whh4Q4HDhxgKDmMEZJkUpFIDJEZH8fzPJpeg0aj0SYzBs/zKBZXqFRcBES9kHILQaRKheXCYqsV8Mf9JR4+/Itq1QVitNZobWFZNpa2UVLjey3Wnv7LkycFmk0Pt+IuEKnSC2eQz+fjw4dfngmj6E2lFKlUCsexieOYViugVqtRrbq4rku9Xsf3fRqNTdbX13nw4AGu616+euXa972YWy0ChpJD5vUTJ5i/M09huYDv+2T3ZLEdBxOGmCiisblJtVbFdV1KGyXSY2m01ii981ntIACUUoq9E3vJTe6jVNogOZQkNCFLS0tkMhncmovv+eRyOYIgYGx8jHK5gkCYQQgMgJSSRCLBaHqU7J4sTsLBDzwmJiYRUuC6LqlUCtuxUfLZKHdIkNsT3RC0r+mOvABE93v/5nYliOMumOjzL+nkuky7RF+CbpmUEoQgjuPnBaKtrE/3MKhFUsm2DT0KunZJpTr5rRZ2doNZJKVEINoKOqVStI+qDsF2Cbbt9JW0gyAykWWMAfEcVIguGSilOxaJZ0qUUiSHk4Rh6GzH3E4w0mw2E7VajTiOaDQ3CU0LrXWHSKKVwrIstFLYtt1+ZJbG0hrP85JAphe3dygSGB5NjyYOTk+/PX1w2qpv1lBaoS0LE4U4jk0UR0SRQWlFqxXgODZaa5aLK427C4tfLBeWnwAenXn0EsSAefzo8Wqh8M9P5XJpbGQ4lU4mh4ctbZFwEti2TRAEmNAQBAHVao2V4sra7d9u37h548dP52/P/wxUgGYXtN9lk0BCKTWyf//UvsyezKFcbvKlsfHxnJIyYaKIVhB45Url6dra2p+l9dKjYrG4akxUBRpA2Au220uRPUv3eBt1Vtiz7xv/AfNdsIEL2aAFAAAAAElFTkSuQmCC")
+		no-repeat left center transparent;
+	background-size: 100% 100%;
+}
+
+#labelError {
+	display: none;
+}
+
+#labelErrorLevel {
+	display: none;
+}
+
+#RoleInsert {
+	font-size: 12pt;
+	color: white;
+	background-color: #007bff;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 6px 12px;
+	border: 1px solid;
+	border-radius: 8px;
+}
+
+#myroleReset{
+	
+	font-size: 12pt;
+	color: white;
+	background-color: red;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 6px 12px;
+	border: 1px solid;
+	border-radius: 8px;
+}
+
+#BackToMain{
+	
+	font-size: 12pt;
+	color: white;
+	background-color: blue;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 6px 12px;
+	border: 1px solid;
+	border-radius: 8px;
+	
+}
+
+h2 {
+	text-align: center;
+	font-size: 30px;
+	color: #0a0a29;
+}
+
+
+
+
+
+
+
+
+/***************FOOTER***************/
+footer {
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	height: 6%;
+	bottom: 0px;
+	background-color: white
+}
+/***************FOOTER***************/
+
