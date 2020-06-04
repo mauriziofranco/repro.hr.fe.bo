@@ -6,7 +6,7 @@ pipeline {
             description: 'Al termine di questa pipeline, vuoi consentire la promozione in ambiente di Produzione?')
     }
     environment {     
-        SERVICE_SOURCE_PORT = "80"  
+        SERVICE_SOURCE_PORT = "8080"  
         REMOTE_WORKING_DIR = "."      
         PACKAGE_FILE_NAME = readMavenPom().getArtifactId();
         ARTIFACT_FULL_FILE_NAME = "repro.hr.fe.bo.war"                      
